@@ -1,0 +1,24 @@
+
+/*reset*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/*-----------------------*/
+
+header {
+    height: auto;
+    padding-bottom: 0.8rem;
+    background-color: #ffd700;
+}
+
+#btn-sign-up {
+    color: #ffd700;
+    transition: all .6s;
+    font-weight: 500;
+}
+#btn-sign-up:hover {
+    color: #ccac00;
+}
