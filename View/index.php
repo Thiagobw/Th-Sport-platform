@@ -13,9 +13,11 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo teste.png" height="80" width="95" alt="">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +42,17 @@
                 </div>
             </div>
         </nav>
+        <div>
+            <img class="img-fluid" src="img/banner.png" alt="">
+        </div>
     </header>
+
+    <main class="container">
+        <section>
+            <h3>txt</h3>
+        </section>
+    </main>
+
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

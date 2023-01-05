@@ -15,10 +15,5 @@ header {
 }
 
 #btn-sign-up {
-    color: #ffd700;
-    transition: all .6s;
     font-weight: 500;
-}
-#btn-sign-up:hover {
-    color: #ccac00;
 }
