@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--Own css-->
     <link rel="stylesheet" href="CSS/styleHome.css">
-    <title>Document</title>
+    <title>TH Sports</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="img/logo teste.png" height="80" width="95" alt="">
+                    <img src="img/logo.png" height="85" width="100" alt="Logo TH-Sports">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                     <ul class="navbar-nav">
                         
                         <li class="nav-item p-md-1">
-                            <a class="nav-link" href="#">SOBRE</a>
+                            <a class="nav-link" href="#">Sobre</a>
                         </li>
 
                         <li class="nav-item p-md-1">
@@ -42,14 +42,14 @@
                 </div>
             </div>
         </nav>
-        <div>
-            <img class="img-fluid" src="img/banner.png" alt="">
+        <div class="w-100 d-flex justify-content-center">
+            <img class="img-fluid banner" src="img/banner.png" alt="banner TH-Sports">
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h3>txt</h3>
+    <main class="container mt-3">
+        <section class="col-12 pt-2">
+            <h3 class="text-center">Sobre o TH Sports</h3>
         </section>
     </main>
 
