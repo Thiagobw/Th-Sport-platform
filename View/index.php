@@ -26,9 +26,12 @@
 
                     <div></div>
                     <ul class="navbar-nav">
-                        
-                        <li class="nav-item p-md-1">
+                    <li class="nav-item p-md-1">
                             <a class="nav-link" href="#">Sobre</a>
+                        </li>
+
+                        <li class="nav-item p-md-1">
+                            <a class="nav-link" href="#">Contato</a>
                         </li>
 
                         <li class="nav-item p-md-1">
@@ -48,9 +51,55 @@
     </header>
 
     <main class="container mt-3">
-        <section class="col-12 pt-2">
+        <section class="col-12 pt-4 title">
             <h3 class="text-center">Sobre o TH Sports</h3>
         </section>
+
+        <div class="row d-flex justify-content-center">
+            <article class="col-11 col-md-6 pt-5">
+                <h5 class="text-center pb-1">oque é?</h5>
+
+                <p class="text">
+                    <em><b>TH Sports</b> é uma ideia</em> de uma plataforma digital para diversos esportes, com o intuito de ajudar com uma forma pratica na organização do chaveamento, cronometro, pontuações e lutas ou Jogos de um campeonato,<em> sem a necessidade de um papel.</em>
+                    <br>
+                    Esta ideia está sendo desenvolvida por apenas uma pessoa, que sou eu que tive a ideoa observando outras plataformas e pensei em porque não expandir e juntar varias caracteristicas em uma só.
+                    <br>
+                    Futuramente  pretendo desenvolver rankings de atelas basedos em suas conquistas, um historico de conquistas de cada atleta e um rank por competição, tendo ideia de dar <em>mais visibilidade ao atleta.</em>
+                </p>
+            </article>
+
+            <article class="col-12 col-md-6 pt-5">
+                <h5 class="text-center pb-1">Como funciona?</h5>
+
+                <p class="text">
+                    O funcionamento é bem simples, você só precisa clicar no botão abaixo que te levara para o sistema de cronometro, <em>caso não tenha uma conta na plataforma.</em>
+                    <br>
+                    Caso já tiver uma conta, você pode gerenciar campeonato, e participar de um.
+                    <br>
+                    No cronometro, podera ser feito lutas e <em>controla os pontos e punições de cada atleta em uma unica luta por vez.</em>
+                </p>
+
+                <div class="col d-flex justify-content-center">
+                    <a class="btn btn-use" href="">Utilizar</a>
+                </div>
+
+            </article>
+        </div>
+
+        <section class="col-12 pt-4 title">
+            <h3 class="text-center">Contato</h3>
+        </section>
+
+        <div class="row d-flex justify-content-center pt-4">
+            <article class="col-11 col-md-6">
+                <h5 class="text-center">Envie-me um email</h5>
+
+            </article>
+
+            <article class="col-11 col-md-6">
+
+            </article>
+        </div>
     </main>
 
     <!--Import bootstrap-5.1 JS-->
