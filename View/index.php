@@ -27,19 +27,19 @@
                     <div></div>
                     <ul class="navbar-nav">
                     <li class="nav-item p-md-1">
-                            <a class="nav-link" href="#">Sobre</a>
+                            <a class="nav-link" href="#titleAbout">Sobre</a>
                         </li>
 
                         <li class="nav-item p-md-1">
-                            <a class="nav-link" href="#">Contato</a>
+                            <a class="nav-link" href="#tittleContact">Contato</a>
                         </li>
 
                         <li class="nav-item p-md-1">
-                            <a class="nav-link" href="#">Log in</a>
+                            <a class="nav-link" id="btn-Log-in" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Log in</a>
                         </li>
 
                         <li class="nav-item p-md-1">
-                            <a class="nav-link" id="btn-sign-up" href="#">Sign up</a>
+                            <a class="nav-link" id="btn-sign-up" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Sign up</a>
                         </li>
                     </ul>
                 </div>
@@ -49,9 +49,11 @@
             <img class="img-fluid banner" src="img/banner.png" alt="banner TH-Sports">
         </div>
     </header>
-
-    <main class="container mt-3">
-        <section class="col-12 pt-4 title">
+    <?php
+    require_once "PopUps/LogIn-SignUp.php";
+    ?>
+    <main class="container mt-4">
+        <section class="col-12 pt-4 title" id="titleAbout">
             <h3 class="text-center">Sobre o TH Sports</h3>
         </section>
 
@@ -60,7 +62,7 @@
                 <h5 class="text-center pb-1">oque é?</h5>
 
                 <p class="text">
-                    <em><b>TH Sports</b> é uma ideia</em> de uma plataforma digital para diversos esportes, com o intuito de ajudar com uma forma pratica na organização do chaveamento, cronometro, pontuações e lutas ou Jogos de um campeonato,<em> sem a necessidade de um papel.</em>
+                    <em><b>TH Sports</b> é uma ideia</em> de uma plataforma digital para diversos esportes, que será feito para jiu jitsu primeiro. Tem o intuito de ajudar com uma forma pratica na organização do chaveamento, cronometro, pontuações e lutas ou Jogos de um campeonato,<em> sem a necessidade de um papel.</em>
                     <br>
                     Esta ideia está sendo desenvolvida por apenas uma pessoa, que sou eu que tive a ideoa observando outras plataformas e pensei em porque não expandir e juntar varias caracteristicas em uma só.
                     <br>
@@ -85,24 +87,87 @@
 
             </article>
         </div>
-
-        <section class="col-12 pt-4 title">
-            <h3 class="text-center">Contato</h3>
-        </section>
-
-        <div class="row d-flex justify-content-center pt-4">
-            <article class="col-11 col-md-6">
-                <h5 class="text-center">Envie-me um email</h5>
-
-            </article>
-
-            <article class="col-11 col-md-6">
-
-            </article>
-        </div>
     </main>
 
+    <main class="container-fluid mt-4" style="background-color: #a2895de4;">
+        <article class="row">
+            <section class="col-12 pt-4 title" id="tittleContact">
+                <h3 class="text-center">Contato</h3>
+            </section>
+        </article>
+
+        <article class="row center mt-4">
+            <div class="col-11 col-md-11 col-lg-10 col-xl-9 col-xxl-7">
+                <div class="row">
+                <article class="col-12 col-md-6 p-3">
+                    <fieldset class="rounded-3 d-flex justify-content-center" style="border: 1.5px solid #65daf4;">
+                        <section class="tittleMessageContact">
+                            <h5 class="rounded-3">Envie-me um email</h5>
+                        </section>
+                        <div class="row mt-5">
+                            <form class="input-group center" action="">
+
+                                <div class="col-11 col-sm-10 col-md-11 mb-3">
+                                    <label for="email" class="form-label m-2">Seu email</label>
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Digite seu Email..." maxlength="90">
+                                </div>
+                                <div class="col-11 col-sm-10 col-md-11 mb-3">
+                                    <label for="name" class="form-label m-2">Seu nome</label>
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Digite seu nome..."  maxlength="90">
+                                </div>
+                                <div class="col-11 col-sm-10 col-md-11 mb-3">
+                                    <label for="subject" class="form-label m-2">Assunto</label>
+                                    <input class="form-control" id="subject" name="subject" type="text" placeholder="Sugestões, Dúvida, Comercial..." maxlength="50">
+                                </div>
+                                <div class="col-11 col-sm-10 col-md-11 mb-4">
+                                    <label for="message" class="form-label m-2">Menssagem</label>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua menssagem..." maxlength="400"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                </article>
+
+                <article class="col-12 col-md-6 p-3 center">
+                    <p class="text-center"> <em>Atualmente o unico meio de contato é via email,</em> futuramente será disponibilizado outros meios aqui! </p>
+                </article>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer style="background-color: #000000;">
+        <br><br><br>
+    </footer>
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        var btnLogin = document.getElementById('btn-Log-in');
+        var btnSignUp = document.getElementById('btn-sign-up');
+        var btnClosePopUp = document.querySelector('.btn-close');
+        
+        btnLogin.addEventListener('click', function() {
+            let loginTittle = document.getElementById('Login-tittle');
+            let formLogin = document.getElementById('formLogin');
+            loginTittle.style.display = 'flex';
+            formLogin.style.display = 'flex';
+        });
+
+        btnSignUp.addEventListener('click', function() {
+            let SignUpTittle = document.getElementById('SignUp-tittle');
+            SignUpTittle.style.display = 'flex';
+        });
+
+        btnClosePopUp.addEventListener('click', function() {
+            if (document.getElementById('Login-tittle').style.display == 'flex' && document.getElementById('formLogin').style.display == 'flex') {
+                document.getElementById('Login-tittle').style.display = 'none';
+                document.getElementById('formLogin').style.display = 'none';
+            }
+
+            if (document.getElementById('SignUp-tittle').style.display == 'flex') {
+                document.getElementById('SignUp-tittle').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
