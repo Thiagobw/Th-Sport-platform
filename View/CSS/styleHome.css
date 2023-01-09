@@ -16,7 +16,7 @@ header {
     background-color: #a2895de4;
 }
 
-#btn-sign-up, #btn-Log-in {
+#btn-signUp, #btn-LogIn {
     cursor: pointer;
     font-weight: 500;
 }

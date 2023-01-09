@@ -35,11 +35,11 @@
                         </li>
 
                         <li class="nav-item p-md-1">
-                            <a class="nav-link" id="btn-Log-in" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Log in</a>
+                            <a class="nav-link" id="btn-LogIn" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Log in</a>
                         </li>
 
                         <li class="nav-item p-md-1">
-                            <a class="nav-link" id="btn-sign-up" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Sign up</a>
+                            <a class="nav-link" id="btn-signUp" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Sign up</a>
                         </li>
                     </ul>
                 </div>
@@ -142,30 +142,45 @@
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
-        var btnLogin = document.getElementById('btn-Log-in');
-        var btnSignUp = document.getElementById('btn-sign-up');
+        var btnLogin = document.getElementById('btn-LogIn');
+        var btnSignUp = document.getElementById('btn-signUp');
         var btnClosePopUp = document.querySelector('.btn-close');
+        var btnAlreadyHaveAnAcc = document.getElementById('btn-already-have-an-acc');
         
         btnLogin.addEventListener('click', function() {
-            let loginTittle = document.getElementById('Login-tittle');
-            let formLogin = document.getElementById('formLogin');
+            let loginTittle = document.getElementById('LogIn-tittle');
+            let formLogin = document.getElementById('formLogIn');
             loginTittle.style.display = 'flex';
             formLogin.style.display = 'flex';
         });
 
         btnSignUp.addEventListener('click', function() {
             let SignUpTittle = document.getElementById('SignUp-tittle');
+            let formSignUp = document.getElementById('formSignUp');
             SignUpTittle.style.display = 'flex';
+            formSignUp.style.display = 'flex';
+        });
+
+        btnAlreadyHaveAnAcc.addEventListener('click', function() {
+            let signUpTittle = document.getElementById('SignUp-tittle');
+            let logInTittle = document.getElementById('LogIn-tittle');
+            signUpTittle.style.display = 'none';
+            logInTittle.style.display = 'flex';
+            document.getElementById('formSignUp').style.display = 'none';
+            document.getElementById('formLogIn').style.display = 'flex';
+
         });
 
         btnClosePopUp.addEventListener('click', function() {
-            if (document.getElementById('Login-tittle').style.display == 'flex' && document.getElementById('formLogin').style.display == 'flex') {
-                document.getElementById('Login-tittle').style.display = 'none';
-                document.getElementById('formLogin').style.display = 'none';
+            if (document.getElementById('LogIn-tittle').style.display == 'flex' && document.getElementById('formLogIn').style.display == 'flex') {
+                document.getElementById('LogIn-tittle').style.display = 'none';
+                document.getElementById('formLogIn').style.display = 'none';
+                document.getElementById('emailLogIn').value = '';
             }
 
-            if (document.getElementById('SignUp-tittle').style.display == 'flex') {
+            if (document.getElementById('SignUp-tittle').style.display == 'flex' && document.getElementById('formSignUp').style.display == 'flex') {
                 document.getElementById('SignUp-tittle').style.display = 'none';
+                document.getElementById('formSignUp').style.display = 'none';
             }
         });
     </script>
