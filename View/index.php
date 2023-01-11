@@ -12,41 +12,45 @@
     <title>TH Sports</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="img/logo.png" height="85" width="100" alt="Logo TH-Sports">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" height="85" width="100" alt="Logo TH-Sports">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <div></div>
                 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-
-                    <div></div>
-                    <ul class="navbar-nav">
+                <ul class="navbar-nav">
                     <li class="nav-item p-md-1">
-                            <a class="nav-link" href="#titleAbout">Sobre</a>
-                        </li>
-
-                        <li class="nav-item p-md-1">
-                            <a class="nav-link" href="#tittleContact">Contato</a>
-                        </li>
-
-                        <li class="nav-item p-md-1">
-                            <a class="nav-link" id="btn-LogIn" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Log in</a>
-                        </li>
-
-                        <li class="nav-item p-md-1">
-                            <a class="nav-link" id="btn-signUp" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Sign up</a>
-                        </li>
-                    </ul>
-                </div>
+                        <a class="nav-link" href="#titleAbout">Sobre</a>
+                    </li>
+                    
+                    <li class="nav-item p-md-1">
+                        <a class="nav-link" href="#tittleContact">Contato</a>
+                    </li>
+                    
+                    <li class="nav-item p-md-1">
+                        <a class="nav-link" id="btn-LogIn" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Log in</a>
+                    </li>
+                    
+                    <li class="nav-item p-md-1">
+                        <a class="nav-link" id="btn-signUp" data-bs-toggle="modal" data-bs-target="#LogIn-SignUp">Sign up</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <div class="w-100 d-flex justify-content-center">
-            <img class="img-fluid banner" src="img/banner.png" alt="banner TH-Sports">
+        </div>
+    </nav>
+        
+        <header>
+        
+        <div class="row m-0">
+            <div class="col-12 p-0">
+            <img class="img-fluid" src="img/teste.png" alt="banner TH-Sports">
+            </div>
         </div>
     </header>
     <?php
@@ -152,6 +156,8 @@
             let formLogin = document.getElementById('formLogIn');
             loginTittle.style.display = 'flex';
             formLogin.style.display = 'flex';
+            document.getElementById('btn-Recover-Password').style.display = 'flex';
+            document.getElementById('text-Recover-Password').style.display = 'flex';
         });
 
         btnSignUp.addEventListener('click', function() {
@@ -159,28 +165,40 @@
             let formSignUp = document.getElementById('formSignUp');
             SignUpTittle.style.display = 'flex';
             formSignUp.style.display = 'flex';
+            document.getElementById('text-already-have-an-acc').style.display = 'flex';
+            btnAlreadyHaveAnAcc.style.display = 'flex';
         });
 
         btnAlreadyHaveAnAcc.addEventListener('click', function() {
             let signUpTittle = document.getElementById('SignUp-tittle');
             let logInTittle = document.getElementById('LogIn-tittle');
             signUpTittle.style.display = 'none';
-            logInTittle.style.display = 'flex';
             document.getElementById('formSignUp').style.display = 'none';
+            document.getElementById('text-already-have-an-acc').style.display = 'none';
+            btnAlreadyHaveAnAcc.style.display = 'none';
+            logInTittle.style.display = 'flex';
             document.getElementById('formLogIn').style.display = 'flex';
+            document.getElementById('btn-Recover-Password').style.display = 'flex';
+                document.getElementById('text-Recover-Password').style.display = 'flex';
 
         });
 
+        // close popUp
         btnClosePopUp.addEventListener('click', function() {
             if (document.getElementById('LogIn-tittle').style.display == 'flex' && document.getElementById('formLogIn').style.display == 'flex') {
                 document.getElementById('LogIn-tittle').style.display = 'none';
                 document.getElementById('formLogIn').style.display = 'none';
+                document.getElementById('btn-Recover-Password').style.display = 'none';
+                document.getElementById('text-Recover-Password').style.display = 'none';
                 document.getElementById('emailLogIn').value = '';
+                document.getElementById('passLogin').value = '';
             }
 
             if (document.getElementById('SignUp-tittle').style.display == 'flex' && document.getElementById('formSignUp').style.display == 'flex') {
                 document.getElementById('SignUp-tittle').style.display = 'none';
                 document.getElementById('formSignUp').style.display = 'none';
+                btnAlreadyHaveAnAcc.style.display = 'none';
+                document.getElementById('text-already-have-an-acc').style.display = 'none';
             }
         });
     </script>
