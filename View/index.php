@@ -85,7 +85,7 @@
                 </p>
 
                 <div class="col d-flex justify-content-center">
-                    <a class="btn btn-use" href="">Utilizar</a>
+                    <a class="btn btn-use" href="score_board.php">Utilizar</a>
                 </div>
 
             </article>
