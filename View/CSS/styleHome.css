@@ -12,8 +12,8 @@
     align-items: center;
 }
 header {
-    height: auto;
-    background-color: #a2895de4;
+    padding-bottom: .15rem;
+    background-color: #ffcf00;
 }
 
 #btn-signUp, #btn-LogIn {
@@ -43,7 +43,7 @@ header {
     margin-right: 1.5%;
 }
 .btn-use {
-    background-color: #a2895de4;
+    background-color: #ffcf00;
     border: none;
 }
 .btn-use:focus {

@@ -44,12 +44,11 @@
             </div>
         </div>
     </nav>
-        
-        <header>
-        
+    
+    <header>
         <div class="row m-0">
             <div class="col-12 p-0">
-            <img class="img-fluid" src="img/teste.png" alt="banner TH-Sports">
+            <img class="img-fluid" src="img/banner.png" alt="banner TH-Sports">
             </div>
         </div>
     </header>
@@ -110,7 +109,6 @@
                         </section>
                         <div class="row mt-5">
                             <form class="input-group center" action="">
-
                                 <div class="col-11 col-sm-10 col-md-11 mb-3">
                                     <label for="email" class="form-label m-2">Seu email</label>
                                     <input class="form-control" id="email" name="email" type="email" placeholder="Digite seu Email..." maxlength="90">
@@ -126,6 +124,9 @@
                                 <div class="col-11 col-sm-10 col-md-11 mb-4">
                                     <label for="message" class="form-label m-2">Menssagem</label>
                                     <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua menssagem..." maxlength="400"></textarea>
+                                </div>
+                                <div class="col-11 col-sm-10 col-md-8 col-lg-6 mb-4">
+                                    <input type="submit" class="btn btn-primary form-control" id="submitMessage" name="submitMessage" value="Enviar">
                                 </div>
                             </form>
                         </div>
