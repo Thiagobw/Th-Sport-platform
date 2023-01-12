@@ -92,7 +92,7 @@
         </div>
     </main>
 
-    <main class="container-fluid mt-4" style="background-color: #a2895de4;">
+    <main class="container-fluid mt-4" style="background-color: #e0a954;">
         <article class="row">
             <section class="col-12 pt-4 title" id="tittleContact">
                 <h3 class="text-center">Contato</h3>
@@ -103,7 +103,7 @@
             <div class="col-11 col-md-11 col-lg-10 col-xl-9 col-xxl-7">
                 <div class="row">
                 <article class="col-12 col-md-6 p-3">
-                    <fieldset class="rounded-3 d-flex justify-content-center" style="border: 1.5px solid #65daf4;">
+                    <fieldset class="rounded-3 d-flex justify-content-center border border-2" style="border-color: #65daf4 !important;">
                         <section class="tittleMessageContact">
                             <h5 class="rounded-3">Envie-me um email</h5>
                         </section>
