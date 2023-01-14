@@ -11,3 +11,23 @@
     justify-content: center;
     align-items: center;
 }
+
+#timer {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 5.5rem;
+    font-weight: 600;
+}
+@media (max-width: 320px) {
+    #timer {
+        font-size: 4.6rem;
+        font-weight: 700;
+    }
+}
+@media (max-width: 425px) {
+    #timer {
+        font-size: 5rem;
+        font-weight: 600;
+    }
+}
