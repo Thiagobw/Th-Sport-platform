@@ -25,8 +25,8 @@
             <h2 class="text-center center" id="timer">05:00</h2>
             <div class="btn-control-timer pt-2">
                 <button class="btn btn-light" id="btn-start"><i class="fa-solid fa-play"></i></button>
-                <button class="btn btn-light" id="btn-pause"><i class="fa-solid fa-pause"></i></button>
-                <button class="btn btn-light" id="btn-restart"><i class="fa-solid fa-rotate-left"></i></button>
+                <button class="btn btn-light" id="btn-pause" style="display: none;"><i class="fa-solid fa-pause"></i></button> <!-- o display dos btns é: inline-block-->
+                <button class="btn btn-light" id="btn-restart" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
             </div>
         </article>
         
@@ -41,6 +41,7 @@
     </footer>
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!--Import font awesome -->
     <script src="https://kit.fontawesome.com/83eee99d9d.js" crossorigin="anonymous"></script>
 </body>
 </html>
