@@ -15,19 +15,24 @@
         <br><br><br><br><br>
     </header>
 
-    <main class="row">
-        <article class="col-12 col-sm-4 col-md-4 col-lg-4 bg-dark p-2">
-            <h3 class="text-white text-center w-100 h-50 m-0">Atleta</h3>
-            <h1 class="text-white text-center w-100 m-0 h-50">Nome..</h1>
+    <main class="row bg-dark">
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 athlete-content1">
+            <h1 class="text-white text-center text-wrap" id="athleteName1">ttttttttt</h1>
+            <p class="pts m-1 mt-2 center">0</p>
         </article>
         
-        <article class="col-12 col-sm-4 col-md-4 col-lg-4 bg-success p-3">
-            <h2 class="text-center" id="timer">05:00</h2>
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 p-3 p-sm-2 p-md-2 p-lg-3 timer-content">
+            <h2 class="text-center center" id="timer">05:00</h2>
+            <div class="btn-control-timer pt-2">
+                <button class="btn btn-light" id="btn-start"><i class="fa-solid fa-play"></i></button>
+                <button class="btn btn-light" id="btn-pause"><i class="fa-solid fa-pause"></i></button>
+                <button class="btn btn-light" id="btn-restart"><i class="fa-solid fa-rotate-left"></i></button>
+            </div>
         </article>
         
-        <article class="col-12 col-sm-4 col-md-4 col-lg-4 bg-dark p-2">
-            <h3 class="text-white text-center w-100 h-50 m-0">Atleta</h3>
-            <h1 class="text-white text-center w-100 m-0 h-50">Nome..</h1>
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 athlete-content2">
+            <h1 class="text-white text-center text-wrap" id="athleteName2"> 47 caractere</h1>
+            <p class="pts m-1 mt-2 center">0</p>
         </article>
     </main>
 
@@ -36,5 +41,6 @@
     </footer>
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/83eee99d9d.js" crossorigin="anonymous"></script>
 </body>
 </html>
