@@ -12,21 +12,27 @@
 </head>
 <body class="container-fluid">
     <header>
-        <br><br><br><br><br>
+        <br>
     </header>
 
     <main class="row bg-dark">
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 athlete-content1">
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content1">
             <h1 class="text-white text-center text-wrap" id="athleteName1">ttttttttt</h1>
-            <p class="pts m-1 mt-2 center">0</p>
-            <div class="w-100 d-flex justify-content-start">
-                <button class="btn btn-light"><i class="fa-solid fa-2"></i></button>
-                <button class="btn btn-light"><i class="fa-solid fa-3"></i></button>
-                <button class="btn btn-light"><i class="fa-solid fa-4"></i></button>
+            <p class="pts mt-1 ml-1 mr-1 mb-0 center">0</p>
+            
+            <div class="content-punishment-advantage">
+                <p class="pts-punishment rounded-2">0</p>
+                <p class="pts-advantage rounded-2">0</p>
+            </div>
+
+            <div id="content-btns-pts-1">
+                <button class="btn btn-sm btn-light" style="font-weight: 500;" id="btn-pts-1">+<i class="fa-solid fa-2"></i></button>
+                <button class="btn btn-sm btn-light" style="font-weight: 500;" id="btn-pts-1">+<i class="fa-solid fa-3"></i></button>
+                <button class="btn btn-sm btn-light" style="font-weight: 500;" id="btn-pts-1">+<i class="fa-solid fa-4"></i></button>
             </div>
         </article>
         
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 p-3 p-sm-2 p-md-2 p-lg-3 timer-content">
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 p-3 p-sm-2 p-md-2 p-2 pb-3 timer-content">
             <h2 class="text-center center" id="timer">05:00</h2>
             <div class="btn-control-timer pt-2">
                 <button class="btn btn-light" id="btn-start"><i class="fa-solid fa-play"></i></button>
@@ -35,13 +41,19 @@
             </div>
         </article>
         
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 athlete-content2">
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content2">
             <h1 class="text-white text-center text-wrap" id="athleteName2"> 47 caractere</h1>
-            <p class="pts m-1 mt-2 center">0</p>
-            <div class="w-100 d-flex justify-content-end">
-                <button class="btn btn-light"><i class="fa-solid fa-2"></i></button>
-                <button class="btn btn-light"><i class="fa-solid fa-3"></i></button>
-                <button class="btn btn-light"><i class="fa-solid fa-4"></i></button>
+            <p class="pts mt-1 ml-1 mr-1 mb-0 center">0</p>
+
+            <div class="content-punishment-advantage">
+                <p class="pts-punishment rounded-2">20</p>
+                <p class="pts-advantage  rounded-2">55</p>
+            </div>
+
+            <div id="content-btns-pts-2">
+                <button class="btn btn-sm btn-light" style="font-weight: 500;" id="btn-pts-2">+<i class="fa-solid fa-2"></i></button>
+                <button class="btn btn-sm btn-light" style="font-weight: 500;" id="btn-pts-2">+<i class="fa-solid fa-3"></i></button>
+                <button class="btn btn-sm btn-light" style="font-weight: 500;" id="btn-pts-2">+<i class="fa-solid fa-4"></i></button>
             </div>
         </article>
     </main>

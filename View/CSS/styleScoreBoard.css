@@ -15,6 +15,11 @@
 .timer-content {
     background-color: #ff8c00;
 }
+.timer-content h2 {
+    height: 75%;
+    width: auto;
+}
+
 #timer {
     width: 100%;
     height: auto;
@@ -23,11 +28,12 @@
 }
 
 .btn-control-timer {
+    height: 25%;
     align-items: flex-end;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .athlete-content1 h1, .athlete-content2 h1{
     margin: 0;
@@ -38,11 +44,43 @@
     width: auto;
     color: #ffffff;
 }
+#content-btns-pts-1, #content-btns-pts-2 {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-punishment-advantage {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+.pts-advantage {
+    background-color: green;
+}
+.pts-punishment {
+    background-color: red;
+}
+.pts-advantage, .pts-punishment {
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.8rem;
+    width: 1.3em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
 
 @media (min-width: 100px) {
-    .btn-control-timer {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
         width: 75%;
     }
+
     #timer {
         font-size: 2.4rem;
         font-weight: 700;
@@ -76,6 +114,9 @@
 }
 
 @media (min-width: 320px) {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 70%;
+    }
     #timer {
         font-size: 4.6rem;
         font-weight: 700;
@@ -87,6 +128,9 @@
 }
 
 @media (min-width: 425px) {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 50%;
+    }
     #timer {
         font-size: 5.5rem;
         font-weight: 600;
@@ -98,6 +142,9 @@
 }
 
 @media (min-width: 768px) {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 75%;
+    }
     .timer-content {
         border-radius: 20px;
         border: 1px solid #212529;
@@ -116,9 +163,10 @@
 }
 
 @media (min-width: 1020px) {
-    .btn-control-timer {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
         width: 70%;
     }
+
     #timer {
         font-size: 7.3rem;
         font-weight: 600;
@@ -130,9 +178,10 @@
 }
 
 @media (min-width: 1200px) {
-    .btn-control-timer {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
         width: 65%;
     }
+
     #timer {
         font-size: 8.5rem;
         font-weight: 600;
@@ -144,9 +193,10 @@
 }
 
 @media (min-width: 1400px) {
-    .btn-control-timer {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
         width: 60%;
     }
+
     #timer {
         font-size: 10.3rem;
         font-weight: 600;
@@ -158,9 +208,10 @@
 }
 
 @media (min-width: 1500px) {
-    .btn-control-timer {
-        width: 55%;
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 50%;
     }
+
     #timer {
         font-size: 11rem;
         font-weight: 600;
@@ -172,6 +223,9 @@
 }
 
 @media (min-width: 1700px) {
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 45%;
+    }
     #timer {
         font-size: 12rem;
         font-weight: 600;
@@ -183,9 +237,10 @@
 }
 
 @media (min-width: 1850px) {
-    .btn-control-timer {
-        width: 50%;
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 40%;
     }
+
     #timer {
         font-size: 13rem;
         font-weight: 600;
@@ -197,9 +252,10 @@
 }
 
 @media (min-width: 2000px) {
-    .btn-control-timer {
-        width: 45%;
+    .btn-control-timer, #content-btns-pts-1, #content-btns-pts-2 {
+        width: 35%;
     }
+
     #timer {
         font-size: 14.5rem;
         font-weight: 600;
