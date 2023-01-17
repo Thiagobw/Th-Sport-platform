@@ -49,7 +49,7 @@
         <article class="col-12 col-sm-12 col-md-4 col-lg-4 p-3 p-sm-2 p-md-2 p-2 pb-3 timer-content">
             <h2 class="text-center center" id="timer">05:00</h2>
             <div class="btn-control-timer mt-3 mt-md-0">
-                <button class="btn btn-light" id="btn-start"><i class="fa-solid fa-play"></i></button>
+                <button class="btn btn-light" id="btn-start" onclick="start()"><i class="fa-solid fa-play"></i></button>
                 <button class="btn btn-light" id="btn-pause" style="display: none;"><i class="fa-solid fa-pause"></i></button> <!-- o display dos btns é: inline-block-->
                 <button class="btn btn-light" id="btn-restart" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
             </div>
