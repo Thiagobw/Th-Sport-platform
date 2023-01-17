@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="CSS/styleScoreBoard.css">
     <!--Import Own JS-->
     <script src="JS/main.js"></script>
-    <title>Placar digital</title>
+    <title>TH - Placar digital</title>
 </head>
 <body class="container-fluid">
     <header>
