@@ -35,6 +35,36 @@
     display: flex;
     justify-content: space-around;
 }
+#btn-start {
+    background-color: #1dcb00;
+    transition: all .3s;
+}
+#btn-start:hover {
+    background-color: #1ac300;
+}
+#btn-start:focus {
+    box-shadow: none;
+}
+
+#btn-pause {
+    background-color: #ffffff;
+    transition: all .3s;
+}
+#btn-pause:hover {
+    background-color: #e8e8e8;
+}
+#btn-pause i {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+#btn-restart {
+    background-color: #ff1116;
+    transition: all .3s;
+}
+#btn-restart:hover {
+    background-color: #ec0c10;
+}
 .athlete-content1 h1, .athlete-content2 h1{
     margin: 0;
     width: auto;
