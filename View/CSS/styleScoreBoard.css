@@ -37,7 +37,7 @@
 }
 #btn-start {
     background-color: #1dcb00;
-    transition: all .3s;
+    transition: all .5s;
 }
 #btn-start:hover {
     background-color: #1ac300;
@@ -48,7 +48,7 @@
 
 #btn-pause {
     background-color: #ffffff;
-    transition: all .3s;
+    transition: all .5s;
 }
 #btn-pause:hover {
     background-color: #e8e8e8;
@@ -60,7 +60,7 @@
 
 #btn-restart {
     background-color: #ff1116;
-    transition: all .3s;
+    transition: all .5s;
 }
 #btn-restart:hover {
     background-color: #ec0c10;

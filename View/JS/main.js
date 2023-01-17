@@ -2,7 +2,7 @@
 // variables for timer
 
 var sec = 60;
-var min = 4;
+var min = 9;
 var interval;
 
 //------------------
@@ -26,26 +26,20 @@ var ptsPunishment2 = 0;
 //----------------------
 
 
-function twodigits (number) {
-
-    if (number<10) {
-        return ('0'+number);
-
-    }else{
-        return (number);
-    }
-}
-
+// control for time
 function start () {
+    started();
     counter();
     interval = setInterval(counter,1000);
 }
 
 function pause () {
+    paused();
     clearInterval(interval);
 }
 
 function stop () {
+    stopped();
     clearInterval(interval);
     sec=60;
     min=4;
@@ -67,6 +61,37 @@ function counter () {
         stop();
     }
 }
+
+function twodigits (number) {
+
+    if (number<10) {
+        return ('0'+number);
+
+    }else{
+        return (number);
+    }
+}
+
+function started () {
+    document.getElementById('btn-start').style.display = 'none';
+    document.getElementById('btn-pause').style.display = 'inline-block';
+    document.getElementById('btn-restart').style.display = 'inline-block';
+}
+
+function paused () {
+    document.getElementById('btn-start').style.display = 'inline-block';
+    document.getElementById('btn-pause').style.display = 'none';
+    document.getElementById('btn-restart').style.display = 'inline-block';
+}
+
+function stopped () {
+    document.getElementById('btn-start').style.display = 'inline-block';
+    document.getElementById('btn-pause').style.display = 'none';
+    document.getElementById('btn-restart').style.display = 'none';
+}
+
+
+//control of points, punishments and advantages
 
 function addPoints (athlet, points) {
 

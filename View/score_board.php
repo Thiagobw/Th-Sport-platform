@@ -50,8 +50,8 @@
             <h2 class="text-center center" id="timer">05:00</h2>
             <div class="btn-control-timer mt-3 mt-md-0">
                 <button class="btn shadow" id="btn-start" onclick="start();"><i class="fa-solid fa-play"></i></button>
-                <button class="btn shadow" id="btn-pause" style="display: none;"><i class="fa-solid fa-pause"></i></button> <!-- o display dos btns é: inline-block-->
-                <button class="btn shadow" id="btn-restart" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                <button class="btn shadow" id="btn-pause" onclick="pause();" style="display: none;"><i class="fa-solid fa-pause"></i></button>
+                <button class="btn shadow" id="btn-restart" onclick="stop();" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
             </div>
         </article>
         
