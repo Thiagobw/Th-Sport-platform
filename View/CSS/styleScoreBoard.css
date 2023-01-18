@@ -81,8 +81,11 @@
     justify-content: space-around;
 }
 
-#content-btns-pts-1, #content-btns-pts-2 button {
+#content-btns-pts-1 button, #content-btns-pts-2 button {
     font-weight: 600;
+}
+#content-btns-pts-1 button:focus , #content-btns-pts-2 button:focus, .btn-punishment:focus, .btn-advantage:focus {
+    box-shadow: none;
 }
 
 .content-punishment-advantage {

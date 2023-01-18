@@ -28,9 +28,9 @@
             </div>
 
             <div id="content-btns-pts-1">
-                <button class="btn btn-sm btn-light" id="btn-pts-1" onclick="addPoints(1,2);">+<i class="fa-solid fa-2"></i></button>
-                <button class="btn btn-sm btn-light" id="btn-pts-1" onclick="addPoints(1,3);">+<i class="fa-solid fa-3"></i></button>
-                <button class="btn btn-sm btn-light" id="btn-pts-1" onclick="addPoints(1,4);">+<i class="fa-solid fa-4"></i></button>
+                <button class="btn btn-sm btn-light" id="btn-pts" onclick="addPoints(1,2);">+<i class="fa-solid fa-2"></i></button>
+                <button class="btn btn-sm btn-light" id="btn-pts" onclick="addPoints(1,3);">+<i class="fa-solid fa-3"></i></button>
+                <button class="btn btn-sm btn-light" id="btn-pts" onclick="addPoints(1,4);">+<i class="fa-solid fa-4"></i></button>
             </div>
 
             <div class="mt-3" id="content-btns-punishment-advantage-1">
