@@ -79,8 +79,8 @@ function started () {
 }
 
 function paused () {
-    document.getElementById('btn-start').style.display = 'inline-block';
     document.getElementById('btn-pause').style.display = 'none';
+    document.getElementById('btn-start').style.display = 'inline-block';
     document.getElementById('btn-restart').style.display = 'inline-block';
 }
 
@@ -92,7 +92,6 @@ function stopped () {
 
 
 //control of points, punishments and advantages
-
 function addPoints (athlet, points) {
 
     if (athlet == 1) {
@@ -168,5 +167,33 @@ function removeAdvantage (athlet) {
             ptsAdvantage2 --;
             document.getElementById('athlete-advantage-2').innerText = ptsAdvantage2;
         }
+    }
+}
+
+
+// control visibility for buttons
+function showButtonsControlPoints (athlet) {
+
+    if (athlet == 1) {
+        document.getElementById('content-btns-pts-1').style.opacity = 1;
+        document.getElementById('content-btns-punishment-advantage-1').style.opacity = 1;
+    }
+
+    if (athlet == 2) {
+        document.getElementById('content-btns-pts-2').style.opacity = 1;
+        document.getElementById('content-btns-punishment-advantage-2').style.opacity = 1;
+    }    
+}
+
+function hiddenButtonsControlPoints (athlet) {
+
+    if (athlet == 1) {
+        document.getElementById('content-btns-pts-1').style.opacity = 0;
+        document.getElementById('content-btns-punishment-advantage-1').style.opacity = 0;
+    }
+
+    if (athlet == 2) {
+        document.getElementById('content-btns-pts-2').style.opacity = 0;
+        document.getElementById('content-btns-punishment-advantage-2').style.opacity = 0;
     }
 }

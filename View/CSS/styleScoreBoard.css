@@ -37,7 +37,7 @@
 }
 #btn-start {
     background-color: #1dcb00;
-    transition: all .5s;
+    transition: .3s;
 }
 #btn-start:hover {
     background-color: #1ac300;
@@ -48,7 +48,7 @@
 
 #btn-pause {
     background-color: #ffffff;
-    transition: all .5s;
+    transition: .3s;
 }
 #btn-pause:hover {
     background-color: #e8e8e8;
@@ -60,7 +60,7 @@
 
 #btn-restart {
     background-color: #ff1116;
-    transition: all .5s;
+    transition: .3s;
 }
 #btn-restart:hover {
     background-color: #ec0c10;
@@ -75,6 +75,8 @@
     color: #ffffff;
 }
 #content-btns-pts-1, #content-btns-pts-2 {
+    opacity: 0;
+    transition: .3s;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -108,6 +110,8 @@
     color: #ffffff;
 }
 #content-btns-punishment-advantage-1, #content-btns-punishment-advantage-2 {
+    opacity: 0;
+    transition: .3s;
     display: flex;
     justify-content: space-between;
 }
@@ -121,6 +125,7 @@
     font-weight: 600;
     background-color: #ff0000;
 }
+
 @media (min-width: 100px) {
 
     .pts-advantage, .pts-punishment {

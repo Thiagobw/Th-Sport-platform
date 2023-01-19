@@ -18,7 +18,7 @@
     </header>
 
     <main class="row bg-dark">
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content1">
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content1" onmouseover="showButtonsControlPoints(1);" onmouseleave="hiddenButtonsControlPoints(1);">
             <h1 class="text-white text-center text-wrap" id="athleteName1">ttttttttt</h1>
             <p class="pts mt-1 ml-1 mr-1 mb-0 center" id="athlete-score-1">0</p>
             
@@ -55,7 +55,7 @@
             </div>
         </article>
         
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content2">
+        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content2" onmouseover="showButtonsControlPoints(2);" onmouseleave="hiddenButtonsControlPoints(2);">
             <h1 class="text-white text-center text-wrap" id="athleteName2"> 47 caractere</h1>
             <p class="pts mt-1 ml-1 mr-1 mb-0 center" id="athlete-score-2">0</p>
 
