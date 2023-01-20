@@ -89,6 +89,9 @@
 #content-btns-pts-1 button:focus , #content-btns-pts-2 button:focus, .btn-punishment:focus, .btn-advantage:focus {
     box-shadow: none;
 }
+#content-btns-pts-1 button i, #content-btns-pts-2 button i, #content-btns-punishment-advantage-1 button i, #content-btns-punishment-advantage-2 button i {
+    padding: 0.35rem 0.20rem 0.35rem 0.20rem;
+}
 
 .content-punishment-advantage {
     display: flex;

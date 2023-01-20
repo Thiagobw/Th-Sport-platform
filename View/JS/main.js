@@ -175,11 +175,35 @@ function removeAdvantage (athlet) {
 function showButtonsControlPoints (athlet) {
 
     if (athlet == 1) {
+
+        setTimeout(function() {
+            document.querySelectorAll('#btn-punishment-1').forEach(element => {
+                element.classList.remove('disabled');
+            })
+            document.querySelectorAll('#btn-advantage-1').forEach(element => {
+                element.classList.remove('disabled');
+            })
+            document.querySelectorAll('#btn-pts-1').forEach(element => {
+                element.classList.remove('disabled');
+            }), 300
+        })
         document.getElementById('content-btns-pts-1').style.opacity = 1;
         document.getElementById('content-btns-punishment-advantage-1').style.opacity = 1;
     }
 
     if (athlet == 2) {
+
+        setTimeout(function() {
+            document.querySelectorAll('#btn-punishment-2').forEach(element => {
+                element.classList.remove('disabled');
+            })
+            document.querySelectorAll('#btn-advantage-2').forEach(element => {
+                element.classList.remove('disabled');
+            })
+            document.querySelectorAll('#btn-pts-2').forEach(element => {
+                element.classList.remove('disabled');
+            }), 300
+        })
         document.getElementById('content-btns-pts-2').style.opacity = 1;
         document.getElementById('content-btns-punishment-advantage-2').style.opacity = 1;
     }    
@@ -188,11 +212,31 @@ function showButtonsControlPoints (athlet) {
 function hiddenButtonsControlPoints (athlet) {
 
     if (athlet == 1) {
+
+        document.querySelectorAll('#btn-punishment-1').forEach(element => {
+            element.classList.add('disabled');
+        })
+        document.querySelectorAll('#btn-advantage-1').forEach(element => {
+            element.classList.add('disabled');
+        })
+        document.querySelectorAll('#btn-pts-1').forEach(element => {
+            element.classList.add('disabled');
+        })
         document.getElementById('content-btns-pts-1').style.opacity = 0;
         document.getElementById('content-btns-punishment-advantage-1').style.opacity = 0;
     }
 
     if (athlet == 2) {
+
+        document.querySelectorAll('#btn-punishment-2').forEach(element => {
+            element.classList.add('disabled');
+        })
+        document.querySelectorAll('#btn-advantage-2').forEach(element => {
+            element.classList.add('disabled');
+        })
+        document.querySelectorAll('#btn-pts-2').forEach(element => {
+            element.classList.add('disabled');
+        })
         document.getElementById('content-btns-pts-2').style.opacity = 0;
         document.getElementById('content-btns-punishment-advantage-2').style.opacity = 0;
     }

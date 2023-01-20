@@ -28,20 +28,20 @@
             </div>
 
             <div id="content-btns-pts-1">
-                <button class="btn btn-sm btn-light" id="btn-pts" onclick="addPoints(1,2);">+<i class="fa-solid fa-2"></i></button>
-                <button class="btn btn-sm btn-light" id="btn-pts" onclick="addPoints(1,3);">+<i class="fa-solid fa-3"></i></button>
-                <button class="btn btn-sm btn-light" id="btn-pts" onclick="addPoints(1,4);">+<i class="fa-solid fa-4"></i></button>
+                <button class="btn btn-sm btn-light disabled" id="btn-pts-1" onclick="addPoints(1,2);">+<i class="fa-solid fa-2"></i></button>
+                <button class="btn btn-sm btn-light disabled" id="btn-pts-1" onclick="addPoints(1,3);">+<i class="fa-solid fa-3"></i></button>
+                <button class="btn btn-sm btn-light disabled" id="btn-pts-1" onclick="addPoints(1,4);">+<i class="fa-solid fa-4"></i></button>
             </div>
 
             <div class="mt-3" id="content-btns-punishment-advantage-1">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-sm btn-punishment" onclick="addPunishment(1);">+<i class="fa-solid fa-1"></i></button>
-                    <button type="button" class="btn btn-sm btn-punishment" onclick="removePunishment(1);">-<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-punishment disabled" id="btn-punishment-1" onclick="addPunishment(1);">+<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-punishment disabled" id="btn-punishment-1" onclick="removePunishment(1);">-<i class="fa-solid fa-1"></i></button>
                 </div>
 
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-sm btn-advantage" onclick="addAdvantage(1);">+<i class="fa-solid fa-1"></i></button>
-                    <button type="button" class="btn btn-sm btn-advantage" onclick="removeAdvantage(1);">-<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-advantage disabled" id="btn-advantage-1" onclick="addAdvantage(1);">+<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-advantage disabled" id="btn-advantage-1" onclick="removeAdvantage(1);">-<i class="fa-solid fa-1"></i></button>
                 </div>
             </div>
         </article>
@@ -65,20 +65,20 @@
             </div>
 
             <div id="content-btns-pts-2">
-                <button class="btn btn-sm btn-light" id="btn-pts-2" onclick="addPoints(2,2);">+<i class="fa-solid fa-2"></i></button>
-                <button class="btn btn-sm btn-light" id="btn-pts-2" onclick="addPoints(2,3);">+<i class="fa-solid fa-3"></i></button>
-                <button class="btn btn-sm btn-light" id="btn-pts-2" onclick="addPoints(2,4);">+<i class="fa-solid fa-4"></i></button>
+                <button class="btn btn-sm btn-light disabled" id="btn-pts-2" onclick="addPoints(2,2);">+<i class="fa-solid fa-2"></i></button>
+                <button class="btn btn-sm btn-light disabled" id="btn-pts-2" onclick="addPoints(2,3);">+<i class="fa-solid fa-3"></i></button>
+                <button class="btn btn-sm btn-light disabled" id="btn-pts-2" onclick="addPoints(2,4);">+<i class="fa-solid fa-4"></i></button>
             </div>
 
             <div class="mt-3" id="content-btns-punishment-advantage-2">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-sm btn-punishment" onclick="addPunishment(2);">+<i class="fa-solid fa-1"></i></button>
-                    <button type="button" class="btn btn-sm btn-punishment" onclick="removePunishment(2);">-<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-punishment disabled" id="btn-punishment-2" onclick="addPunishment(2);">+<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-punishment disabled" id="btn-punishment-2" onclick="removePunishment(2);">-<i class="fa-solid fa-1"></i></button>
                 </div>
 
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-sm btn-advantage" onclick="addAdvantage(2);">+<i class="fa-solid fa-1"></i></button>
-                    <button type="button" class="btn btn-sm btn-advantage" onclick="removeAdvantage(2);">-<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-advantage disabled" id="btn-advantage-2" onclick="addAdvantage(2);">+<i class="fa-solid fa-1"></i></button>
+                    <button type="button" class="btn btn-sm btn-advantage disabled" id="btn-advantage-2" onclick="removeAdvantage(2);">-<i class="fa-solid fa-1"></i></button>
                 </div>
             </div>
         </article>
