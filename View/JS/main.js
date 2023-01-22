@@ -264,6 +264,21 @@ function showSelectedTime() {
     document.getElementById('timeSelected').innerText = document.getElementById('timeFight').value;
 }
 
+function checkField (option,inputId) {
+
+    if (option == 1) {
+        if ($('#'+inputId).val() == '') {
+            document.getElementById(inputId).classList.add('is-invalid');
+        }
+        if ($('#'+inputId).val() != '') {
+            document.getElementById(inputId).classList.add('is-valid');
+        }
+    }
+    if (option == 2) {
+        document.getElementById(inputId).classList.remove('is-invalid');
+    }
+}
+
 //submission of fight configuration form
 $('#setupFightForm').on('submit', function(event) {
     event.preventDefault();
@@ -272,7 +287,7 @@ $('#setupFightForm').on('submit', function(event) {
     if((athlet1 != '' && (athlet1.length >= 1 && athlet1.length <= 47)) &&
        (athlet2 != '' && (athlet2.length >= 1 && athlet2.length <= 47))) {
 
-        
+
 
     }
 });

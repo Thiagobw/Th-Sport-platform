@@ -12,7 +12,7 @@
 
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-3">
                         <label for="email" class="form-label m-2">Atleta</label>
-                        <input class="form-control" id="athletName1" name="athletName1" type="text" placeholder="Digite o nome do atleta..." maxlength="47">
+                        <input class="form-control" id="athletName1" name="athletName1" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName1');" onfocus="checkField(2, 'athletName1');" required>
                     </div>
                     
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-4">
@@ -29,7 +29,7 @@
 
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-3">
                         <label for="email" class="form-label m-2">Atleta</label>
-                        <input class="form-control" id="athletName2" name="athletName2" type="text" placeholder="Digite o nome do atleta..." maxlength="47">
+                        <input class="form-control" id="athletName2" name="athletName2" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName2');" onfocus="checkField(2, 'athletName2');" required>
                     </div>
 
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-4">
