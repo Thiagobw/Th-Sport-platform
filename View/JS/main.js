@@ -241,3 +241,38 @@ function hiddenButtonsControlPoints (athlet) {
         document.getElementById('content-btns-punishment-advantage-2').style.opacity = 0;
     }
 }
+
+$(window).on('load',function() {
+    sessionStorage.clear();
+    $('#setUPFight').modal('show');
+
+    if (window.matchMedia('(min-width: 768px) and (max-whidth: 1440px)').matches) {
+
+        document.querySelectorAll('#btn-punishment-2').forEach(element => {
+            element.classList.remove('btn-sm');
+        })
+        document.querySelectorAll('#btn-advantage-2').forEach(element => {
+            element.classList.remove('btn-sm');
+        })
+        document.querySelectorAll('#btn-pts-2').forEach(element => {
+            element.classList.remove('btn-sm');
+        })
+    }
+});
+
+function showSelectedTime() {
+    document.getElementById('timeSelected').innerText = document.getElementById('timeFight').value;
+}
+
+//submission of fight configuration form
+$('#setupFightForm').on('submit', function(event) {
+    event.preventDefault();
+    let athlet1 = $('#athletName1').val();
+    let athlet2 = $('#athletName2').val();
+    if((athlet1 != '' && (athlet1.length >= 1 && athlet1.length <= 47)) &&
+       (athlet2 != '' && (athlet2.length >= 1 && athlet2.length <= 47))) {
+
+        
+
+    }
+});

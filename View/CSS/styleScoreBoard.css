@@ -129,6 +129,10 @@
     background-color: #ff0000;
 }
 
+#modal-title-setUp-fight {
+    font-weight: 500;
+}
+
 @media (min-width: 100px) {
 
     .pts-advantage, .pts-punishment {
