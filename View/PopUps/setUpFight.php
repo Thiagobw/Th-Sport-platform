@@ -12,12 +12,12 @@
 
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-3">
                         <label for="email" class="form-label m-2">Atleta</label>
-                        <input class="form-control" id="athletName1" name="athletName1" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName1');" onfocus="checkField(2, 'athletName1');" required>
+                        <input class="form-control" id="athletName1" name="athletName1" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName1');" onfocus="checkField(2, 'athletName1');" onkeydown="checkCaracter(event);" required>
                     </div>
                     
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-4">
                         <label for="email" class="form-label m-2">Cor do quimono(opcional)</label>
-                        <select class="form-select">
+                        <select class="form-select" id="kimonoColor1">
                             <option value="0" selected>selecione</option>
                             <option value="white">Branco</option>
                             <option value="black">Preto</option>
@@ -29,12 +29,12 @@
 
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-3">
                         <label for="email" class="form-label m-2">Atleta</label>
-                        <input class="form-control" id="athletName2" name="athletName2" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName2');" onfocus="checkField(2, 'athletName2');" required>
+                        <input class="form-control" id="athletName2" name="athletName2" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName2');" onfocus="checkField(2, 'athletName2');" onkeydown="checkCaracter(event);" required>
                     </div>
 
                     <div class="col-12 col-sm-10 col-md-7 col-lg-7 mb-4">
                         <label for="email" class="form-label m-2">Cor do quimono(opcional)</label>
-                        <select class="form-select" oninput="colorQuimono(2, this.value);">
+                        <select class="form-select" id="kimonoColor2">
                             <option value="0" selected>selecione</option>
                             <option value="white">Branco</option>
                             <option value="black">Preto</option>

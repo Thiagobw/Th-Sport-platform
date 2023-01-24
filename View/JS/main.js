@@ -1,8 +1,8 @@
 
 // variables for timer
 
-var sec = 60;
-var min = 9;
+var sec = 0;
+var min = 0;
 var interval;
 
 //------------------
@@ -41,9 +41,20 @@ function pause () {
 function stop () {
     stopped();
     clearInterval(interval);
-    sec=60;
-    min=4;
-    document.getElementById('timer').innerText ='00:00';
+
+    resetTime();
+    resetPoints();
+    $('#athlete-score-1').text(ptsAthlet1);
+    $('#athlete-score-2').text(ptsAthlet2);
+    $('#athlete-punishment-1').text(ptsPunishment1);
+    $('#athlete-punishment-2').text(ptsPunishment2);
+    $('#athlete-advantage-1').text(ptsAdvantage1);
+    $('#athlete-advantage-2').text(ptsAdvantage2);
+    if (min+1 == 10) {
+        $('#timer').text(min+1 + ':00');
+    } else {
+        $('#timer').text('0' + (min+1) + ':00');
+    }
 }
 
 function counter () {
@@ -54,8 +65,7 @@ function counter () {
         min--;
     }
     
-    console.log(min, sec);
-    document.getElementById('timer').innerText = twodigits(min)+':'+twodigits(sec);
+    $('#timer').text(twodigits(min)+':'+twodigits(sec));
     
     if(min < 0){
         stop();
@@ -96,12 +106,12 @@ function addPoints (athlet, points) {
 
     if (athlet == 1) {
         ptsAthlet1 += points;
-        document.getElementById('athlete-score-1').innerText = ptsAthlet1;
+        $('#athlete-score-1').text(ptsAthlet1);
     }
 
     if (athlet == 2) {
         ptsAthlet2 += points;
-        document.getElementById('athlete-score-2').innerText = ptsAthlet2;
+        $('#athlete-score-2').text(ptsAthlet2);
     }
 }
 
@@ -109,12 +119,12 @@ function addPunishment (athlet) {
 
     if (athlet == 1) {
         ptsPunishment1 ++;
-        document.getElementById('athlete-punishment-1').innerText = ptsPunishment1;
+        $('#athlete-punishment-1').text(ptsPunishment1);
     }
 
     if (athlet == 2) {
         ptsPunishment2 ++;
-        document.getElementById('athlete-punishment-2').innerText = ptsPunishment2;
+        $('#athlete-punishment-2').text(ptsPunishment2);
     }
 }
 
@@ -124,7 +134,7 @@ function removePunishment (athlet) {
 
         if (ptsPunishment1 > 0) {
             ptsPunishment1 --;
-        document.getElementById('athlete-punishment-1').innerText = ptsPunishment1;
+            $('#athlete-punishment-1').text(ptsPunishment1);
         }
     }
 
@@ -132,7 +142,7 @@ function removePunishment (athlet) {
 
         if (ptsPunishment2 > 0) {
             ptsPunishment2 --;
-            document.getElementById('athlete-punishment-2').innerText = ptsPunishment2;
+            $('#athlete-punishment-2').text(ptsPunishment2);
         }
     }
 
@@ -142,12 +152,12 @@ function addAdvantage (athlet) {
 
     if (athlet == 1) {
         ptsAdvantage1 ++;
-        document.getElementById('athlete-advantage-1').innerText = ptsAdvantage1;
+        $('#athlete-advantage-1').text(ptsAdvantage1);
     }
 
     if (athlet == 2) {
         ptsAdvantage2 ++;
-        document.getElementById('athlete-advantage-2').innerText = ptsAdvantage2;
+        $('#athlete-advantage-2').text(ptsAdvantage2);
     }
 }
 
@@ -157,7 +167,7 @@ function removeAdvantage (athlet) {
         
         if (ptsAdvantage1 > 0) {
             ptsAdvantage1 --;
-            document.getElementById('athlete-advantage-1').innerText = ptsAdvantage1;
+            $('#athlete-advantage-1').text(ptsAdvantage1);
         }
     }
 
@@ -165,7 +175,7 @@ function removeAdvantage (athlet) {
 
         if (ptsAdvantage2 > 0) {
             ptsAdvantage2 --;
-            document.getElementById('athlete-advantage-2').innerText = ptsAdvantage2;
+            $('#athlete-advantage-2').text(ptsAdvantage2);
         }
     }
 }
@@ -264,10 +274,12 @@ function showSelectedTime() {
     document.getElementById('timeSelected').innerText = document.getElementById('timeFight').value;
 }
 
+
 function checkField (option,inputId) {
 
     if (option == 1) {
         if ($('#'+inputId).val() == '') {
+
             document.getElementById(inputId).classList.add('is-invalid');
         }
         if ($('#'+inputId).val() != '') {
@@ -279,15 +291,102 @@ function checkField (option,inputId) {
     }
 }
 
-//submission of fight configuration form
+
+// function that checks if the key pressed is a special character according to the ASCII table
+function checkCaracter(e) {
+    if((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 97 && e.keyCode <= 122) || (e.keyCode >= 48 && e.keyCode <= 57) || 
+        e.keyCode === 8 || e.keyCode === 13 || e.keyCode == 9 || e.keyCode == 20) {
+
+    } else {
+        // if it's not a character of aA-zZ or 0-9 it doesn't allow to be inserted.
+        e.preventDefault();
+    }
+}
+
+
+// Associates the anonymous function to the 'submit' event of the form with id 'setupFightForm'
 $('#setupFightForm').on('submit', function(event) {
+
+    // Prevents the default behavior of the submit event
     event.preventDefault();
-    let athlet1 = $('#athletName1').val();
-    let athlet2 = $('#athletName2').val();
-    if((athlet1 != '' && (athlet1.length >= 1 && athlet1.length <= 47)) &&
-       (athlet2 != '' && (athlet2.length >= 1 && athlet2.length <= 47))) {
 
+    // Captures the value of the fight time field
+    let timeFight = $('#timeFight').val();
 
+    // Captures the value of the athlete name 1 field
+    let nameAthlet1 = $('#athletName1').val();
 
+    // Captures the value of the athlete name 2 field
+    let nameAthlet2 = $('#athletName2').val();
+
+     // Check if the names of the athletes are not empty and if the length of the names is greater or equal to 1 and less or equal to 47 characters
+    if((nameAthlet1 != '' && (nameAthlet1.length >= 1 && nameAthlet1.length <= 47)) && (nameAthlet2 != '' && (nameAthlet2.length >= 1 && nameAthlet2.length <= 47))) {
+
+         // Declares the fight object
+        var fight = {};
+        // Creates a time list with minutes and seconds, minutes are always 60 seconds, so saves the minute with one less value than received.
+        const time = {minute: timeFight-1, second: 60};
+
+        // Check if the kimono colors were filled
+        if ($('#kimonoColor2').val() != 0 && $('#kimonoColor1').val() != 0) {
+            // If kimono color selected, adds the information of the athletes names, kimono color and fight time to the fight object
+            fight = {
+                nameAthlet1: nameAthlet1,
+                kimonoColor1: $('#kimonoColor1').val(),
+                nameAthlet2: nameAthlet2,
+                kimonoColor2: $('#kimonoColor2').val(),
+                timeFight: time
+            }
+        } else {
+             // If no kimono color is selected, it only adds the information of the athletes names and fight time to the fight object
+            fight = {
+                nameAthlet1: nameAthlet1,
+                nameAthlet2: nameAthlet2,
+                timeFight: time
+            }
+        }
+
+        // Stores the fight object in the browser's session memory
+        sessionStorage.setItem('fightSetup', JSON.stringify(fight));
+
+        min = time.minute;
+        sec = time.second;
+
+        // Update the time counter in HTML with the value of the minute + 1 and second '00'
+        if (min+1 == 10) {
+            $('#timer').text(time.minute+1 + ':00');
+        } else {
+              // Adds a zero in front of the value of the minute and updates the time counter in HTML with the value of the minute + 1 and second '00'
+            $('#timer').text('0' + (time.minute+1) + ':00');
+        }
+
+        // Updates the name of athlete 1 in HTML with the value stored in the fight object
+        $('#athleteName1').text(fight.nameAthlet1);
+
+        //Updates the name of athlete 2 in HTML with the value stored in the fight object
+        $('#athleteName2').text(fight.nameAthlet2);
+
+        // Hides the fight configuration modal
+        $('#setUPFight').modal('hide');
     }
 });
+
+
+function resetTime () {
+
+    var getfightSetup = sessionStorage.getItem('fightSetup');
+    
+    var fight = JSON.parse(getfightSetup);
+    min = fight.timeFight.minute;
+    sec = 60;
+}
+
+
+function resetPoints () {
+    ptsAthlet1 = 0;
+    ptsAthlet2 = 0;
+    ptsAdvantage1 = 0;
+    ptsAdvantage2 = 0;
+    ptsPunishment1 = 0;
+    ptsPunishment2 = 0;
+}
