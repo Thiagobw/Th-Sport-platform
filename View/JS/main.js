@@ -381,7 +381,7 @@ function resetTime () {
     min = fight.timeFight.minute;
     sec = 60;
 }
- // #fff9c4 cor de fundo home
+
 function changeTheme () {
     if($(".theme").is(':checked')) {
         localStorage.setItem('theme', 'dark');
