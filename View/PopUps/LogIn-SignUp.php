@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="col-11 col-sm-10 col-md-9 mb-2">
-                        <input type="submit" class="btn btn-success form-control" id="submitSign" name="submitSign" value="Conectar">
+                        <input type="submit" class="btn btn-success form-control" id="submitLogin" name="submitLogin" value="Conectar">
                     </div>
                 </form>
 
