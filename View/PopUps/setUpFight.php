@@ -1,14 +1,22 @@
 <!-- Modal -->
 <div class="modal fade" id="setUPFight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content bg-dark text-white">
+        <div class="modal-content">
 
-            <div class="modal-header center">
-                <h5 class="modal-title" id="modal-title-setUp-fight">Configurar luta</h5>
+            <div class="modal-header d-flex justify-content-end">
+                Tema
+                <label class="switch">
+                    <input type="checkbox" class="theme" oninput="changeTheme();">
+                    <span class="slider"></span>
+                </label>
             </div>
             
             <div class="modal-body container center">
+
                 <form class=" col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6 col-xxl-5 shadow rounded-3" id="setupFightForm">
+
+                    <h5 class="modal-title w-100 text-center p-2" id="modal-title-setUp-fight">Configurar luta</h5>
+
                     <div class="input-group center">
 
                         <div class="col-11 col-md-8 col-lg-9 mb-3">

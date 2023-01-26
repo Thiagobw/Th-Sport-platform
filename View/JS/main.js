@@ -254,6 +254,7 @@ function hiddenButtonsControlPoints (athlet) {
 
 $(window).on('load',function() {
     sessionStorage.clear();
+    checkTheme();
     $('#setUPFight').modal('show');
 
     if (window.matchMedia('(min-width: 768px) and (max-whidth: 1440px)').matches) {
@@ -380,7 +381,16 @@ function resetTime () {
     min = fight.timeFight.minute;
     sec = 60;
 }
-
+ // #fff9c4 cor de fundo home
+function changeTheme () {
+    if($(".theme").is(':checked')) {
+        localStorage.setItem('theme', 'dark');
+        
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+    checkTheme();
+}
 
 function resetPoints () {
     ptsAthlet1 = 0;
@@ -389,4 +399,41 @@ function resetPoints () {
     ptsAdvantage2 = 0;
     ptsPunishment1 = 0;
     ptsPunishment2 = 0;
+}
+
+function checkTheme () {
+
+    if (localStorage.getItem('theme') == 'dark') {
+        $('.theme').attr('checked', true);
+        aplyTheme('dark');
+    } else {
+        $('.theme').attr('checked', false);
+        aplyTheme('light');
+    }
+}
+
+
+function aplyTheme (theme) {
+
+    if (theme == 'dark') {
+        if ($('.modal-content').hasClass('bg-light')) {
+            $('.modal-content').removeClass('bg-light');
+            $('.modal-content').addClass('text-white');
+            $('.modal-content').addClass('bg-dark');
+        }
+        else if (!$('.modal-content').hasClass('bg-light') && !$('.modal-content').hasClass('bg-dark') && !$('.modal-content').hasClass('text-white')) {
+            $('.modal-content').addClass('text-white');
+            $('.modal-content').addClass('bg-dark');
+        }
+    } 
+    else if (theme == 'light') {
+        if ($('.modal-content').hasClass('bg-dark') && $('.modal-content').hasClass('text-white')) {
+            $('.modal-content').removeClass('bg-dark');
+            $('.modal-content').removeClass('text-white');
+            $('.modal-content').addClass('bg-light');
+        }
+        else if (!$('.modal-content').hasClass('bg-dark') && !$('.modal-content').hasClass('text-white') && !$('.modal-content').hasClass('bg-light')) {
+            $('.modal-content').addClass('bg-light');
+        }
+    }
 }
