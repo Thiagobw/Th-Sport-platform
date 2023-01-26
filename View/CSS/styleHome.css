@@ -14,6 +14,21 @@
 body {
     background-color: #fff9c4;
 }
+
+.bg-nav {
+    background-color: #fff9c4;
+}
+.nav-link {
+    color: #04D939;
+    transition: color cubic-bezier(0.3, 0.15, 0.3, 1);
+}
+.nav-link:hover {
+    color: #03B830;
+}
+.nav-link:focus {
+    color: #029727;
+}
+
 header {
     padding-bottom: .15rem;
     background-color: #ffcf00;

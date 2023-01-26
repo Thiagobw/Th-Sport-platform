@@ -12,7 +12,7 @@
     <title>TH Sports</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg bg-nav">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" height="85" width="100" alt="Logo TH-Sports">
