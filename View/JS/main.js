@@ -384,10 +384,10 @@ function resetTime () {
 
 function changeTheme () {
     if($(".theme").is(':checked')) {
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('theme', 'light');
         
     } else {
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('theme', 'dark');
     }
     checkTheme();
 }
@@ -404,10 +404,10 @@ function resetPoints () {
 function checkTheme () {
 
     if (localStorage.getItem('theme') == 'dark') {
-        $('.theme').attr('checked', true);
+        $('.theme').attr('checked', false);
         aplyTheme('dark');
     } else {
-        $('.theme').attr('checked', false);
+        $('.theme').attr('checked', true);
         aplyTheme('light');
     }
 }
