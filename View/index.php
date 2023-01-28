@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!--Import jquery validate 1.19.5-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <!--Import Own JS--->
     <script src="JS/scriptHome.js" defer></script>
     
@@ -119,23 +121,27 @@
                             <h5 class="rounded-3">Envie-me um email</h5>
                         </section>
                         <div class="row mt-5">
-                            <form class="input-group center" action="">
-                                <div class="col-11 col-sm-10 col-md-11 mb-3">
-                                    <label for="email" class="form-label m-2">Seu email</label>
-                                    <input class="form-control" id="email" name="email" type="email" placeholder="Digite seu Email..." maxlength="90">
-                                </div>
+                            <form class="input-group center" id="sendMailForm">
                                 <div class="col-11 col-sm-10 col-md-11 mb-3">
                                     <label for="name" class="form-label m-2">Seu nome</label>
-                                    <input class="form-control" id="name" name="name" type="text" placeholder="Digite seu nome..."  maxlength="90">
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Digite seu nome..." minlength="10" maxlength="50">
                                 </div>
+                                
+                                <div class="col-11 col-sm-10 col-md-11 mb-3">
+                                    <label for="email" class="form-label m-2">Seu email</label>
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Digite seu Email..." minlength="10" maxlength="50">
+                                </div>
+                                
                                 <div class="col-11 col-sm-10 col-md-11 mb-3">
                                     <label for="subject" class="form-label m-2">Assunto</label>
                                     <input class="form-control" id="subject" name="subject" type="text" placeholder="Sugestões, Dúvida, Comercial..." maxlength="50">
                                 </div>
+                                
                                 <div class="col-11 col-sm-10 col-md-11 mb-4">
                                     <label for="message" class="form-label m-2">Menssagem</label>
                                     <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua menssagem..." maxlength="400"></textarea>
                                 </div>
+                                
                                 <div class="col-11 col-sm-10 col-md-8 col-lg-6 mb-4">
                                     <input type="submit" class="btn btn-primary form-control" id="submitMessage" name="submitMessage" value="Enviar">
                                 </div>
