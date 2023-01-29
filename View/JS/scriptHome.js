@@ -16,7 +16,7 @@ $(window).on('resize', function() {
     }
 });
 
-function teste () {
+function showAndHideBtnMenu () {
     if ($('#checkMenu').is(':checked')) {
 
         $('.navbar').toggleClass("navbar-show");
@@ -25,9 +25,7 @@ function teste () {
     }
 }
 
-$('#sendMailForm').on('submit', function(event) {
-    event.preventDefault();
-    
+$(document).ready(function() {
     $("#sendMailForm").validate({
         rules: {
             name: {
@@ -39,7 +37,7 @@ $('#sendMailForm').on('submit', function(event) {
                 required: true,
                 email: true,
                 minlength: 10,
-                maxlength: 50
+                maxlength: 50,
             },
             subject: {
                 required: true,
@@ -52,37 +50,27 @@ $('#sendMailForm').on('submit', function(event) {
         },
         messages: {
             name: {
-                required: "Por favor, digite seu nome",
-                minlength: "Seu nome precisa ter pelo menos 10 caracteres",
-                maxlength: "Seu nome não pode ter mais do que 50 caracteres"
+                required: "Por favor, informe seu nome",
+                minlength: "Seu nome deve ter pelo menos 10 caracteres",
+                maxlength: "Seu nome deve ter no máximo 50 caracteres"
             },
             email: {
-                required: "Por favor, digite seu email",
-                email: "Por favor, digite um email válido",
-                minlength: "Seu email precisa ter pelo menos 10 caracteres",
-                maxlength: "Seu email não pode ter mais do que 50 caracteres"
+                required: "Por favor, informe seu email",
+                email: "Por favor, informe um email válido",
+                minlength: "Seu email deve ter pelo menos 10 caracteres",
+                maxlength: "Seu email deve ter no máximo 50 caracteres",
             },
             subject: {
-                required: "Por favor, digite o assunto",
-                maxlength: "O assunto não pode ter mais do que 50 caracteres"
+                required: "Por favor, informe o assunto",
+                maxlength: "O assunto deve ter no máximo 50 caracteres"
             },
             message: {
-                required: "Por favor, digite sua mensagem",
-                maxlength: "Sua mensagem não pode ter mais do que 400 caracteres"
+                required: "Por favor, informe a mensagem",
+                maxlength: "A mensagem deve ter no máximo 400 caracteres"
             }
         },
         submitHandler: function(form) {
-            // Faça algo aqui, como enviar o formulário via AJAX
-            alert('deu bom');
+            
         }
     });
 });
-
-function emailIsValid (email) {
-    var emailRegex = /^([a-zA-Z0-9_.-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{3,4})+$/;
-    if(!emailRegex.test(email)) {
-        return false;
-    } else {
-        return true;
-    }
-}
