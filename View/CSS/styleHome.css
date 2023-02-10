@@ -157,6 +157,11 @@ header {
     background-color: #65daf499;
     outline: 1.5px solid #0d6efd95;
 }
+
+#content-contact {
+    background-color: #e0a954;
+    margin-top: 1.5rem;
+}
 .tittleMessageContact {
     width: fit-content;
     position: absolute;
@@ -167,4 +172,8 @@ header {
     background-color: #e0a954;
     position: relative;
     top: -18px;
+}
+#sendMailForm div .invalid-feedback {
+    color: red;
+    font-size: medium;
 }

@@ -25,52 +25,119 @@ function showAndHideBtnMenu () {
     }
 }
 
-$(document).ready(function() {
-    $("#sendMailForm").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 10,
-                maxlength: 50
-            },
-            email: {
-                required: true,
-                email: true,
-                minlength: 10,
-                maxlength: 50,
-            },
-            subject: {
-                required: true,
-                maxlength: 50
-            },
-            message: {
-                required: true,
-                maxlength: 400
-            }
-        },
-        messages: {
-            name: {
-                required: "Por favor, informe seu nome",
-                minlength: "Seu nome deve ter pelo menos 10 caracteres",
-                maxlength: "Seu nome deve ter no máximo 50 caracteres"
-            },
-            email: {
-                required: "Por favor, informe seu email",
-                email: "Por favor, informe um email válido",
-                minlength: "Seu email deve ter pelo menos 10 caracteres",
-                maxlength: "Seu email deve ter no máximo 50 caracteres",
-            },
-            subject: {
-                required: "Por favor, informe o assunto",
-                maxlength: "O assunto deve ter no máximo 50 caracteres"
-            },
-            message: {
-                required: "Por favor, informe a mensagem",
-                maxlength: "A mensagem deve ter no máximo 400 caracteres"
-            }
-        },
-        submitHandler: function(form) {
-            
+function validation (element) {
+    var result = checkField(element);
+
+    if (result[0] === true) {
+        if (checkMessageErorExistence(element) && $(element).hasClass('is-invalid')) {
+            $(element).next().remove();
+            $(element).removeClass('is-invalid');
         }
+        $(element).addClass('is-valid');
+        return true;
+    } else {
+
+        if (!checkMessageErorExistence(element) && !$(element).hasClass('is-invalid')) {
+            $(element).addClass('is-invalid');
+            $('<p>').addClass('invalid-feedback').text(result[1]).insertAfter(element);
+        } else {
+
+            if ($(element).text() != result[1]) {
+                $(element).next().text(result[1]);
+            }
+        }
+        return false;
+    }
+}
+function checkMessageErorExistence (element) {
+    if ($(element).next().length == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+$('#sendMailForm').submit(function(e) {
+    e.preventDefault();
+    const fieldIds = [
+            '#name',
+            '#email',
+            '#subject',
+            '#message'
+        ];
+    
+    var checkedFields = [];
+    fieldIds.forEach(element => {
+        checkedFields.push(validation(element));
     });
+    
+    if (checkedFields[0] == true && checkedFields[1] == true && checkedFields[2] == true && checkedFields[3] == true) {
+
+        $.ajax({
+            type: 'POST',
+            url: window.location.pathname + '../Control/send_email.php',
+            dataType: 'json',
+            data: {
+                name: $.trim($(fieldIds[0]).val()),
+                email: $(fieldIds[1]).val().replace(/\s/g, ''),
+                subject: $.trim($(fieldIds[2]).val()),
+                message: $.trim($(fieldIds[3]).val())
+            }
+        });
+
+    }
 });
+function checkField (idField) {
+    switch(idField) {
+        case '#name':
+            if ($.trim($(idField).val()).length > 5 && $.trim($(idField).val()).length < 51) {
+
+                if ($.trim($(idField).val()).split(' ').length > 1) {
+                    return [true, ''];
+                } else {
+                    return [false, 'Informe seu sobrenome.'];
+                }
+            } else {
+                return [false, 'O nome é obrigatorio e precisa ter entre 5 a 50 digitos.'];
+            }
+            break;
+        case '#email':
+            var rulesMail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,4}))$/;
+            
+            if (($(idField).val().replace(/\s/g, '').length > 14 && $(idField).val().replace(/\s/g, '').length < 51)) {
+
+                if (rulesMail.test($(idField).val().replace(/\s/g, ''))) {
+                    return [true, ''];
+                } else {
+                    return [false, 'Formato do email é invalido.'];
+                }
+            } else {
+                return [false, 'O email é obrigatorio e precisa ter entre 14 a 50 digitos.'];
+            }
+
+            break;
+        case '#subject':
+            if ($.trim($(idField).val()).length > 4 && $.trim($(idField).val()).length < 51) {
+                
+                if ($.trim($(idField).val()).split(' ').length > 0) {
+                    return [true, ''];
+                }
+            } else {
+                return [false, 'O assunto é obrigatorio e precisa ter entre 5 a 50 digitos.'];
+            }
+            break;
+        case '#message':
+            if(($.trim($(idField).val()).length > 29 && $.trim($(idField).val()).length < 401)) {
+
+                if ($.trim($(idField).val()).split(' ').length > 1) {
+                    return [true, ''];
+                } else {
+                    return [false, 'É necessario ter mais de uma palavra.'];
+                }
+            } else {
+                return [false, 'A mensagem precisa ter entre 30 a 400 digitos.'];
+            }
+            break;
+    }
+}

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    <title>TH Sports</title>
     <!--Import bootstrap-5.1 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--Own css-->
@@ -18,8 +19,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
     <!--Import Own JS--->
     <script src="JS/scriptHome.js" defer></script>
-    
-    <title>TH Sports</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-nav">
@@ -106,7 +105,7 @@
         </div>
     </main>
 
-    <main class="container-fluid mt-4" style="background-color: #e0a954;">
+    <main class="container-fluid" id="content-contact">
         <article class="row">
             <section class="col-12 pt-4 title" id="tittleContact">
                 <h3 class="text-center">Contato</h3>
@@ -123,27 +122,27 @@
                         </section>
                         <div class="row mt-5">
                             <form class="input-group center" id="sendMailForm">
-                                <div class="col-11 col-sm-10 col-md-11 mb-3">
+                                <div class="col-11 col-sm-10 col-md-11 mb-2">
                                     <label for="name" class="form-label m-2">Seu nome</label>
-                                    <input class="form-control" id="name" name="name" type="text" placeholder="Digite seu nome..." minlength="10" maxlength="50">
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Digite seu nome..." maxlength="50" onblur="validation('#name');">
                                 </div>
                                 
-                                <div class="col-11 col-sm-10 col-md-11 mb-3">
+                                <div class="col-11 col-sm-10 col-md-11 mb-2">
                                     <label for="email" class="form-label m-2">Seu email</label>
-                                    <input class="form-control" id="email" name="email" type="email" placeholder="Digite seu Email..." minlength="10" maxlength="50">
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Digite seu Email..." maxlength="50" onblur="validation('#email');">
+                                </div>
+                                
+                                <div class="col-11 col-sm-10 col-md-11 mb-2">
+                                    <label for="subject" class="form-label m-2">Assunto</label>
+                                    <input class="form-control" id="subject" name="subject" type="text" placeholder="Sugestões, Dúvida, Comercial..." maxlength="50" onblur="validation('#subject');">
                                 </div>
                                 
                                 <div class="col-11 col-sm-10 col-md-11 mb-3">
-                                    <label for="subject" class="form-label m-2">Assunto</label>
-                                    <input class="form-control" id="subject" name="subject" type="text" placeholder="Sugestões, Dúvida, Comercial..." maxlength="50">
-                                </div>
-                                
-                                <div class="col-11 col-sm-10 col-md-11 mb-4">
                                     <label for="message" class="form-label m-2">Menssagem</label>
-                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua menssagem..." maxlength="400"></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua menssagem..." maxlength="400" onblur="validation('#message');"></textarea>
                                 </div>
                                 
-                                <div class="col-11 col-sm-10 col-md-8 col-lg-6 mb-4">
+                                <div class="col-11 col-sm-10 col-md-8 col-lg-6 mb-3">
                                     <input type="submit" class="btn btn-primary form-control" id="submitMessage" name="submitMessage" value="Enviar">
                                 </div>
                             </form>
