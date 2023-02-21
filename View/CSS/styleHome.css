@@ -177,3 +177,13 @@ header {
     color: red;
     font-size: medium;
 }
+
+/*loader send email*/
+#menssageStatus {
+    font-size: 1.3em;
+}
+#loader {
+    width: 5rem;
+    height: 5rem;
+    color:#fff000;
+}

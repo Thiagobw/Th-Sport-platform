@@ -70,22 +70,40 @@ $('#sendMailForm').submit(function(e) {
     var checkedFields = [];
     fieldIds.forEach(element => {
         checkedFields.push(validation(element));
+
     });
-    
+
     if (checkedFields[0] == true && checkedFields[1] == true && checkedFields[2] == true && checkedFields[3] == true) {
 
+        let link_server = window.location.pathname + '../Control/send_email.php';
+
         $.ajax({
-            type: 'POST',
-            url: window.location.pathname + '../Control/send_email.php',
+            type: "POST",
+            url: link_server,
             dataType: 'json',
             data: {
                 name: $.trim($(fieldIds[0]).val()),
                 email: $(fieldIds[1]).val().replace(/\s/g, ''),
                 subject: $.trim($(fieldIds[2]).val()),
-                message: $.trim($(fieldIds[3]).val())
+                message: $.trim($(fieldIds[3]).val()),
+                sendBtn: $('#submitMessage').attr('name')
+            },
+            beforeSend: function() {
+                $('#modalLoader').modal('show');
+            },
+            success: function (data) {
+                if (data.isTrue) {
+                    console.log('deu certo!');
+                }
+                console.log('Dados enviados com sucesso: ', data);
+            },
+            error: function (xhr, status, error) {
+                console.error('Erro ao enviar dados: ', error);
+            },
+            complete: function() {
+                $('#modalLoader').modal('hide');
             }
         });
-
     }
 });
 function checkField (idField) {

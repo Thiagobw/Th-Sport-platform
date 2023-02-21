@@ -11,12 +11,9 @@
     <!--Own css-->
     <link rel="stylesheet" href="CSS/styleHome.css">
     <!--Import jquery 3.6.3-->
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!--Import jquery validate 1.19.5-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
     <!--Import Own JS--->
     <script src="JS/scriptHome.js" defer></script>
 </head>
@@ -138,8 +135,8 @@
                                 </div>
                                 
                                 <div class="col-11 col-sm-10 col-md-11 mb-3">
-                                    <label for="message" class="form-label m-2">Menssagem</label>
-                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua menssagem..." maxlength="400" onblur="validation('#message');"></textarea>
+                                    <label for="message" class="form-label m-2">Mensagem</label>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Digite sua mensagem..." maxlength="400" onblur="validation('#message');"></textarea>
                                 </div>
                                 
                                 <div class="col-11 col-sm-10 col-md-8 col-lg-6 mb-3">
@@ -157,6 +154,19 @@
             </div>
         </article>
     </main>
+
+    <div class="modal fade" id="modalLoader" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body d-flex justify-content-center">
+                    <div class="spinner-border" id="loader" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <p class="text-center" id="menssageStatus">Carregando...</p>
+            </div>
+        </div>
+    </div>
 
     <footer style="background-color: #000000;">
         <br><br><br>
