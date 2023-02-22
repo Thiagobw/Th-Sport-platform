@@ -75,6 +75,16 @@ $('#sendMailForm').submit(function(e) {
 
     if (checkedFields[0] == true && checkedFields[1] == true && checkedFields[2] == true && checkedFields[3] == true) {
 
+        const divAttributes = {
+            id: 'modalLoader',
+            'class': 'modal fade',
+            'data-bs-backdrop': 'static',
+            'data-bs-keyboard': 'false',
+            'tabindex': '-1',
+            'aria-hidden': 'true'
+        }
+        createLoadingAnimation(divAttributes, '#content-contact');
+
         let link_server = window.location.pathname + '../Control/send_email.php';
 
         $.ajax({
@@ -93,15 +103,32 @@ $('#sendMailForm').submit(function(e) {
             },
             success: function (data) {
                 if (data.isTrue) {
-                    console.log('deu certo!');
+                    $('.modal-body').append($('<div/>', {class: 'completedloading success'}));
+                    $('.completedloading').append($('<div/>', {class: 'ring'}));
+                    $('.ring').append($('<i/>', {class: 'fa-solid fa-check fa-3x'}));
+                    $('#menssageStatus').text('Enviado com sucesso!');
+                    var modalFooter = $('<div/>', {class: 'modal-footer'});
+                    var closeButton = $('<button/>', {type: 'button', class: 'btn btn-primary', text: 'Concluir', 'data-bs-dismiss': 'modal'});
+                    modalFooter.append(closeButton);
+                    $('.modal-content').append(modalFooter);
                 }
-                console.log('Dados enviados com sucesso: ', data);
             },
             error: function (xhr, status, error) {
-                console.error('Erro ao enviar dados: ', error);
+                if (error !== '') {
+                    const modalBody = $('.modal-body');
+                modalBody.append($('<div/>', {class: 'completedloading error'}));
+                modalBody.find('.completedloading').append($('<div/>', {class: 'ring'}));
+                modalBody.find('.ring').append($('<i/>', {class: 'fa-solid fa-exclamation fa-3x'}));
+                $('<div/>', {class: 'modal-footer d-flex justify-content-around'}).insertAfter(modalBody);
+                modalBody.next('.modal-footer').append($('<a/>', {href: '#titleContact', class: 'btn btn-primary', text: 'Tente novamente'}));
+                modalBody.next('.modal-footer').append($('<button/>', {type: 'button', class: 'btn btn-danger', 'data-bs-dismiss': 'modal', 'aria-label': 'Close', text: 'Cancelar'}));
+                $('#messageStatus').text('Erro ao enviar e-mail!');
+                }
+                
+                //console.error('Erro ao enviar dados: ', error);
             },
             complete: function() {
-                $('#modalLoader').modal('hide');
+                $('.spinner-border').remove();
             }
         });
     }
@@ -158,4 +185,14 @@ function checkField (idField) {
             }
             break;
     }
+}
+
+function createLoadingAnimation(attributes, targetElement) {
+    $('<div/>', attributes).insertAfter(targetElement);
+    $('#' + attributes.id).append($('<div/>', {class: 'modal-dialog modal-dialog-centered'}));
+    $('.modal-dialog').append($('<div/>', {class: 'modal-content'}));
+    $('.modal-content').append($('<div/>', {class: 'modal-body d-flex justify-content-center'}));
+    $('.modal-body').append($('<div/>', {class: 'spinner-border', id: 'loader', role: 'status'}));
+    $('#loader').append($('<span/>', {class: 'visually-hidden', text: 'Loading...'}));
+    $('<h4/>', {id: 'menssageStatus', text: 'Carregando...'}).insertAfter('.modal-body');
 }

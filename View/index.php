@@ -14,6 +14,8 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>
     <!--Import bootstrap-5.1 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!--Import fontawesome-->
+    <script src="https://kit.fontawesome.com/83eee99d9d.js" crossorigin="anonymous"></script>
     <!--Import Own JS--->
     <script src="JS/scriptHome.js" defer></script>
 </head>
@@ -157,13 +159,12 @@
 
     <div class="modal fade" id="modalLoader" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
+
             <div class="modal-content">
                 <div class="modal-body d-flex justify-content-center">
-                    <div class="spinner-border" id="loader" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
+                    
                 </div>
-                <p class="text-center" id="menssageStatus">Carregando...</p>
+                <h4 class="text-center" id="menssageStatus">Carregando...</h4>
             </div>
         </div>
     </div>
