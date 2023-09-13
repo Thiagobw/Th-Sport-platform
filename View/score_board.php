@@ -24,7 +24,7 @@
     </header>
 
     <main class="row bg-dark">
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content1" onmouseover="showButtonsControlPoints(1);" onmouseleave="hiddenButtonsControlPoints(1);">
+        <article class="d-flex flex-column justify-content-evenly col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content1" onmouseover="showButtonsControlPoints(1);" onmouseleave="hiddenButtonsControlPoints(1);">
             <h1 class="text-white text-center text-wrap" id="athleteName1"></h1>
             <p class="pts mt-1 ml-1 mr-1 mb-0 center" id="athlete-score-1">0</p>
             
@@ -52,7 +52,7 @@
             </div>
         </article>
         
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 p-3 p-sm-2 p-md-2 p-2 pb-3 timer-content">
+        <article class="d-flex flex-column justify-content-evenly col-12 col-sm-12 col-md-4 col-lg-4 p-3 p-sm-2 p-md-2 p-2 pb-3 timer-content">
             <h2 class="text-center center" id="timer"></h2>
             <div class="btn-control-timer mt-3 mt-md-0">
                 <button class="btn shadow" id="btn-start" onclick="start();"><i class="fa-solid fa-play"></i></button>
@@ -61,7 +61,7 @@
             </div>
         </article>
         
-        <article class="col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content2" onmouseover="showButtonsControlPoints(2);" onmouseleave="hiddenButtonsControlPoints(2);">
+        <article class="d-flex flex-column justify-content-evenly col-12 col-sm-12 col-md-4 col-lg-4 bg-dark p-2 pb-3 athlete-content2" onmouseover="showButtonsControlPoints(2);" onmouseleave="hiddenButtonsControlPoints(2);">
             <h1 class="text-white text-center text-wrap" id="athleteName2"></h1>
             <p class="pts mt-1 ml-1 mr-1 mb-0 center" id="athlete-score-2">0</p>
 
