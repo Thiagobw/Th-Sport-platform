@@ -156,19 +156,6 @@
             </div>
         </article>
     </main>
-
-    <div class="modal fade" id="modalLoader" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-                <div class="modal-body d-flex justify-content-center">
-                    
-                </div>
-                <h4 class="text-center" id="menssageStatus">Carregando...</h4>
-            </div>
-        </div>
-    </div>
-
     <footer style="background-color: #000000;">
         <br><br><br>
     </footer>

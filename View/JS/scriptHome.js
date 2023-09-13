@@ -111,21 +111,21 @@ $('#sendMailForm').submit(function(e) {
                     var closeButton = $('<button/>', {type: 'button', class: 'btn btn-primary', text: 'Concluir', 'data-bs-dismiss': 'modal'});
                     modalFooter.append(closeButton);
                     $('.modal-content').append(modalFooter);
+                } else{
                 }
             },
             error: function (xhr, status, error) {
-                if (error !== '') {
-                    const modalBody = $('.modal-body');
-                modalBody.append($('<div/>', {class: 'completedloading error'}));
-                modalBody.find('.completedloading').append($('<div/>', {class: 'ring'}));
-                modalBody.find('.ring').append($('<i/>', {class: 'fa-solid fa-exclamation fa-3x'}));
-                $('<div/>', {class: 'modal-footer d-flex justify-content-around'}).insertAfter(modalBody);
-                modalBody.next('.modal-footer').append($('<a/>', {href: '#titleContact', class: 'btn btn-primary', text: 'Tente novamente'}));
-                modalBody.next('.modal-footer').append($('<button/>', {type: 'button', class: 'btn btn-danger', 'data-bs-dismiss': 'modal', 'aria-label': 'Close', text: 'Cancelar'}));
-                $('#messageStatus').text('Erro ao enviar e-mail!');
-                }
+                console.log('Erro na requisição: ' + status + ' - ' + error);
+                $('#modalBodyLoadingStatus').append($('<div/>', {class: 'completedloading error'}));
+                $('.completedloading').append($('<div/>', {class: 'ring'}));
+                $('#modalBodyLoadingStatus').find('.ring').append($('<i/>', {class: 'fa-solid fa-exclamation fa-3x'}));
+                $('<div/>', {class: 'modal-footer d-flex justify-content-around', id: 'modalFooterLoadingStatus'}).insertAfter('#messageStatus');
+                $('<div/>', {class: 'modal-footer d-flex justify-content-around', id: 'modalFooterLoadingStatus'}).insertAfter('#menssageStatus');
+                $('#modalFooterLoadingStatus').append($('<a/>', {href: '#titleContact', class: 'btn btn-primary', text: 'Tente novamente'}));
+                $('#modalFooterLoadingStatus').append($('<button/>', {type: 'button', class: 'btn btn-danger', 'data-bs-dismiss': 'modal', 'aria-label': 'Close', text: 'Cancelar'}));
+                $('#menssageStatus').text('Erro ao enviar e-mail!');
                 
-                //console.error('Erro ao enviar dados: ', error);
+                console.error('Erro ao enviar dados: ', error);
             },
             complete: function() {
                 $('.spinner-border').remove();
@@ -147,6 +147,7 @@ function checkField (idField) {
                 return [false, 'O nome é obrigatorio e precisa ter entre 5 a 50 digitos.'];
             }
             break;
+
         case '#email':
             var rulesMail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,4}))$/;
             
@@ -160,8 +161,8 @@ function checkField (idField) {
             } else {
                 return [false, 'O email é obrigatorio e precisa ter entre 14 a 50 digitos.'];
             }
-
             break;
+
         case '#subject':
             if ($.trim($(idField).val()).length > 4 && $.trim($(idField).val()).length < 51) {
                 
@@ -172,6 +173,7 @@ function checkField (idField) {
                 return [false, 'O assunto é obrigatorio e precisa ter entre 5 a 50 digitos.'];
             }
             break;
+            
         case '#message':
             if(($.trim($(idField).val()).length > 29 && $.trim($(idField).val()).length < 401)) {
 
@@ -189,10 +191,10 @@ function checkField (idField) {
 
 function createLoadingAnimation(attributes, targetElement) {
     $('<div/>', attributes).insertAfter(targetElement);
-    $('#' + attributes.id).append($('<div/>', {class: 'modal-dialog modal-dialog-centered'}));
-    $('.modal-dialog').append($('<div/>', {class: 'modal-content'}));
-    $('.modal-content').append($('<div/>', {class: 'modal-body d-flex justify-content-center'}));
-    $('.modal-body').append($('<div/>', {class: 'spinner-border', id: 'loader', role: 'status'}));
+    $('#' + attributes.id).append($('<div/>', {class: 'modal-dialog modal-dialog-centered', id: 'modalDialogLoadingStatus'}));
+    $('#modalDialogLoadingStatus').append($('<div/>', {class: 'modal-content', id: 'modalContentLoadingStatus'}));
+    $('#modalContentLoadingStatus').append($('<div/>', {class: 'modal-body d-flex justify-content-center', id: 'modalBodyLoadingStatus'}));
+    $('#modalBodyLoadingStatus').append($('<div/>', {class: 'spinner-border', id: 'loader', role: 'status'}));
     $('#loader').append($('<span/>', {class: 'visually-hidden', text: 'Loading...'}));
-    $('<h4/>', {id: 'menssageStatus', text: 'Carregando...'}).insertAfter('.modal-body');
+    $('<h4/>', {id: 'menssageStatus', text: 'Carregando...'}).insertAfter('#modalBodyLoadingStatus');
 }
