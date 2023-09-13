@@ -73,6 +73,7 @@
 .athlete-content1 h1, .athlete-content2 h1{
     margin: 0;
     width: auto;
+    overflow-wrap: break-word;
 }
 .pts {
     width: auto;
@@ -302,8 +303,6 @@
     }
 
     .content-punishment-advantage, #content-btns-punishment-advantage-1, #content-btns-punishment-advantage-2 {
-        margin-left: auto;
-        margin-right: auto;
         width: 90%;
         /*padding top-right-bottom-left*/
         padding: 0 1.5em 1em 1.5em;
@@ -343,7 +342,6 @@
 
     .content-punishment-advantage, #content-btns-punishment-advantage-1, #content-btns-punishment-advantage-2 {
         width: auto;
-        /*padding top-right-bottom-left*/
         padding: 0 1em 1em 1em;
     }
 
@@ -429,10 +427,8 @@
         font-size: 2.7rem;
     }
 
-    .content-punishment-advantage, #content-btns-punishment-advantage-1, #content-btns-punishment-advantage-2  {
-        margin: 0 auto 0 auto;
+    .content-punishment-advantage, #content-btns-punishment-advantage-1, #content-btns-punishment-advantage-2 {
         width: 85%;
-        /*padding top-right-bottom-left*/
         padding: 0 1em 1em 1em;
     }
 

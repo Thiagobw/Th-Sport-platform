@@ -21,7 +21,7 @@
 
                         <div class="col-11 col-md-8 col-lg-9 mb-3">
                             <label for="email" class="form-label m-2">Atleta</label>
-                            <input class="form-control" id="athletName1" name="athletName1" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName1');" onfocus="checkField(2, 'athletName1');" onkeydown="checkCaracter(event);" required>
+                            <input class="form-control" id="athletName1" name="athletName1" type="text" placeholder="Digite o nome do atleta..." maxlength="17" onblur="checkField(1, 'athletName1');" onfocus="checkField(2, 'athletName1');" onkeydown="checkCaracter(event);" required>
                         </div>
 
                         <div class="col-11 col-md-8 col-lg-9 mb-4">
@@ -38,7 +38,7 @@
 
                         <div class="col-11 col-md-8 col-lg-9 mb-3">
                             <label for="email" class="form-label m-2">Atleta</label>
-                            <input class="form-control" id="athletName2" name="athletName2" type="text" placeholder="Digite o nome do atleta..." maxlength="47" onblur="checkField(1, 'athletName2');" onfocus="checkField(2, 'athletName2');" onkeydown="checkCaracter(event);" required>
+                            <input class="form-control" id="athletName2" name="athletName2" type="text" placeholder="Digite o nome do atleta..." maxlength="17" onblur="checkField(1, 'athletName2');" onfocus="checkField(2, 'athletName2');" onkeydown="checkCaracter(event);" required>
                         </div>
 
                         <div class="col-11 col-md-8 col-lg-9 mb-4">

@@ -5,7 +5,7 @@ var sec = 0;
 var min = 0;
 var interval;
 
-//------------------
+//----------------------
 
 
 // variables for points
@@ -13,7 +13,7 @@ var interval;
 var ptsAthlet1 = 0;
 var ptsAthlet2 = 0;
 
-//------------------
+//----------------------
 
 
 // variables for punishment and advantage
@@ -25,6 +25,10 @@ var ptsPunishment2 = 0;
 
 //----------------------
 
+// Declares the fight object
+var fight = {};
+
+//----------------------
 
 // control for time
 function start () {
@@ -312,19 +316,16 @@ $('#setupFightForm').on('submit', function(event) {
     event.preventDefault();
 
     // Captures the value of the fight time field
-    let timeFight = $('#timeFight').val();
+    const timeFight = $('#timeFight').val();
 
     // Captures the value of the athlete name 1 field
-    let nameAthlet1 = $('#athletName1').val();
+    const nameAthlet1 = $('#athletName1').val();
 
     // Captures the value of the athlete name 2 field
-    let nameAthlet2 = $('#athletName2').val();
+    const nameAthlet2 = $('#athletName2').val();
 
      // Check if the names of the athletes are not empty and if the length of the names is greater or equal to 1 and less or equal to 47 characters
-    if((nameAthlet1 != '' && (nameAthlet1.length >= 1 && nameAthlet1.length <= 47)) && (nameAthlet2 != '' && (nameAthlet2.length >= 1 && nameAthlet2.length <= 47))) {
-
-         // Declares the fight object
-        var fight = {};
+    if((nameAthlet1 != '' && (nameAthlet1.length >= 1 && nameAthlet1.length <= 17)) && (nameAthlet2 != '' && (nameAthlet2.length >= 1 && nameAthlet2.length <= 17))) {
         // Creates a time list with minutes and seconds, minutes are always 60 seconds, so saves the minute with one less value than received.
         const time = {minute: timeFight-1, second: 60};
 
@@ -346,9 +347,6 @@ $('#setupFightForm').on('submit', function(event) {
                 timeFight: time
             }
         }
-
-        // Stores the fight object in the browser's session memory
-        sessionStorage.setItem('fightSetup', JSON.stringify(fight));
 
         min = time.minute;
         sec = time.second;
@@ -374,10 +372,6 @@ $('#setupFightForm').on('submit', function(event) {
 
 
 function resetTime () {
-
-    var getfightSetup = sessionStorage.getItem('fightSetup');
-    
-    var fight = JSON.parse(getfightSetup);
     min = fight.timeFight.minute;
     sec = 60;
 }
@@ -412,28 +406,40 @@ function checkTheme () {
     }
 }
 
-
 function aplyTheme (theme) {
-
-    if (theme == 'dark') {
-        if ($('.modal-content').hasClass('bg-light')) {
-            $('.modal-content').removeClass('bg-light');
-            $('.modal-content').addClass('text-white');
-            $('.modal-content').addClass('bg-dark');
-        }
-        else if (!$('.modal-content').hasClass('bg-light') && !$('.modal-content').hasClass('bg-dark') && !$('.modal-content').hasClass('text-white')) {
-            $('.modal-content').addClass('text-white');
-            $('.modal-content').addClass('bg-dark');
-        }
-    } 
-    else if (theme == 'light') {
-        if ($('.modal-content').hasClass('bg-dark') && $('.modal-content').hasClass('text-white')) {
-            $('.modal-content').removeClass('bg-dark');
-            $('.modal-content').removeClass('text-white');
-            $('.modal-content').addClass('bg-light');
-        }
-        else if (!$('.modal-content').hasClass('bg-dark') && !$('.modal-content').hasClass('text-white') && !$('.modal-content').hasClass('bg-light')) {
-            $('.modal-content').addClass('bg-light');
-        }
+    switch (theme) {
+        case 'dark':
+            dark();
+            break;
+            case 'light':
+                light();
+                break;
+    }
+}
+function dark() {
+    if ($('.modal-content').hasClass('bg-light')) {
+        $('.modal-content').removeClass('bg-light');
+        $('.modal-content').addClass('text-white');
+        $('.modal-content').addClass('bg-dark');
+        document.body.classList.remove('bg-light');
+        document.body.classList.add('bg-secondary');
+    }
+    else if (!$('.modal-content').hasClass('bg-light') && !$('.modal-content').hasClass('bg-dark') && !$('.modal-content').hasClass('text-white')) {
+        $('.modal-content').addClass('text-white');
+        $('.modal-content').addClass('bg-dark');
+        document.body.classList.add('bg-secondary');
+    }
+}
+function light() {
+    if ($('.modal-content').hasClass('bg-dark') && $('.modal-content').hasClass('text-white')) {
+        $('.modal-content').removeClass('bg-dark');
+        $('.modal-content').removeClass('text-white');
+        $('.modal-content').addClass('bg-light');
+        document.body.classList.remove('bg-secondary');
+        document.body.classList.add('bg-light');
+    }
+    else if (!$('.modal-content').hasClass('bg-dark') && !$('.modal-content').hasClass('text-white') && !$('.modal-content').hasClass('bg-light')) {
+        $('.modal-content').addClass('bg-light');
+        document.body.classList.add('bg-light');
     }
 }
