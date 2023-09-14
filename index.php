@@ -7,7 +7,7 @@
     <!--Import bootstrap-5.1 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--Import Own css-->
-    <link rel="stylesheet" href="CSS/styleScoreBoard.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
     <!--Import jquery 3.6.3-->
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <!--Import bootstrap-5.1 JS-->
@@ -15,7 +15,7 @@
     <!--Import font awesome -->
     <script src="https://kit.fontawesome.com/83eee99d9d.js" crossorigin="anonymous"></script>
     <!--Import Own JS-->
-    <script src="JS/main.js" defer></script>
+    <script src="assets/JS/main.js" defer></script>
     <title>TH - Placar digital</title>
 </head>
 <body class="container-fluid d-flex flex-column justify-content-center vh-100">
@@ -95,7 +95,7 @@
             </svg>
         </button>
         <?php
-            require_once "PopUps/setUpFight.php";
+            require_once "assets/Component/Modal_setUpFight.php";
         ?>
     </footer>
 </body>
